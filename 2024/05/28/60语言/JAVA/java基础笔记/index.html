@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		java基础笔记 | 
+	 
+	kong lei&#39;s Blog
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+		<meta name="description" content="笔记本" />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "konglei.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">kong lei's Blog</a>
+
+	<ul id="menu">
+    
+
+    
+
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href='https://wujun234.com/post/Long-bitCount-jie-xi/' class="menu-item-link" target="_blank">
+            wujun234`s Blog
+          </a>
+        </li>
+      
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/kthunder' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										20项目
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01MizarU
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/20%E9%A1%B9%E7%9B%AE/01MizarU/MizarU%E6%B5%8B%E8%AF%95/">
+                     
+										    MizarU测试
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02SASP_WEB
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/20%E9%A1%B9%E7%9B%AE/02SASP_WEB/SASP-web%E5%89%8D%E7%AB%AF%E9%85%8D%E7%BD%AE/">
+                     
+										    SASP-web前端配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/20%E9%A1%B9%E7%9B%AE/02SASP_WEB/SASP-%E5%89%8D%E7%AB%AF/">
+                     
+										    SASP-前端
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03PIAS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/20%E9%A1%B9%E7%9B%AE/03PIAS/PIAS%E5%8A%9F%E8%83%BD%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/">
+                     
+										    PIAS功能流程梳理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/20%E9%A1%B9%E7%9B%AE/03PIAS/PIAS%E7%BC%96%E8%AF%91/">
+                     
+										    PIAS编译
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/20%E9%A1%B9%E7%9B%AE/03PIAS/TLS1.2%E5%8D%8F%E8%AE%AE/">
+                     
+										    TLS1.2协议
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										40工具
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										GIT
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/40%E5%B7%A5%E5%85%B7/GIT/git%E5%AD%90%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%96%B0/">
+                     
+										    git子模块更新
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/40%E5%B7%A5%E5%85%B7/GIT/git%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/">
+                     
+										    git操作笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										LINUX
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/40%E5%B7%A5%E5%85%B7/LINUX/linux%E8%AE%BE%E7%BD%AE/">
+                     
+										    linux设置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MAKE
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/40%E5%B7%A5%E5%85%B7/MAKE/GCC%E5%8F%82%E6%95%B0/">
+                     
+										    GCC参数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/40%E5%B7%A5%E5%85%B7/MAKE/makefile/">
+                     
+										    makefile
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										50嵌入式
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/ARM%E6%9C%AF%E8%AF%AD%E8%A1%A8/">
+                     
+										    ARM术语表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										AUTOSAR OS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/AUTOSAR%20OS/OS/">
+                     
+										    OS
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BSP%E6%A6%82%E8%BF%B0/">
+                     
+										    BSP概述
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BootLoader/">
+                     
+										    BootLoader
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Contex-M3中断
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Contex-M3%E4%B8%AD%E6%96%AD/M3%E4%B8%AD%E6%96%AD/">
+                     
+										    M3中断
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Contex-M3%E4%B8%AD%E6%96%AD/STM32-%E4%B8%AD%E6%96%AD/">
+                     
+										    STM32-中断
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Debuge经验
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/Cortex-M7%E5%9C%A8%E5%88%86%E7%BB%84%E4%BC%98%E5%85%88%E7%BA%A7%E9%85%8D%E7%BD%AE%E4%B8%BA4%E6%97%B6svc%E8%A7%A6%E5%8F%91hardfault/">
+                     
+										    Cortex-M7在分组优先级配置为4时svc触发hardfault
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										FreeRTOS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/Contex-M3%E5%86%85%E6%A0%B8%E6%A6%82%E8%BF%B0/">
+                     
+										    Contex-M3内核概述
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/F103%E7%A7%BB%E6%A4%8DFreeRTOS/">
+                     
+										    F103移植FreeRTOS
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
+                     
+										    修改delay实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MCAL
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/WDG/">
+                     
+										    WDG
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Map%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">
+                     
+										    Map文件解析
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32f1xx%20HAL%E5%BA%93%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/">
+                     
+										    stm32f1xx HAL库目录介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										外设
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/CAN/">
+                     
+										    CAN
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/ENDINIT/">
+                     
+										    ENDINIT
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/FLASH/">
+                     
+										    FLASH
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/IOM/">
+                     
+										    IOM
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SENT/">
+                     
+										    SENT
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SPI/">
+                     
+										    SPI
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/STM/">
+                     
+										    STM
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/WDG/">
+                     
+										    WDG
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8C%E6%A8%A1%E5%9D%97%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF/">
+                     
+										    硬件手册模块结构模板
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                     
+										    嵌入式开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										汽车行业规范
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%B1%BD%E8%BD%A6%E8%A1%8C%E4%B8%9A%E8%A7%84%E8%8C%83/MISAR_C/">
+                     
+										    MISAR_C
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E9%93%BE%E6%8E%A5%E8%84%9A%E6%9C%AC/">
+                     
+										    链接脚本
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E9%93%BE%E6%8E%A5%E8%84%9A%E6%9C%ACGNU%E6%89%8B%E5%86%8C/">
+                     
+										    链接脚本GNU手册
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										60语言
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										C
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/C/C%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/">
+                     
+										    C代码片段
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/C/volatile/">
+                     
+										    volatile
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										JAVA
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/JAVA/BigDecimal/">
+                     
+										    BigDecimal
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/JAVA/Java%E5%BC%BA%E8%BD%AF%E8%BD%AF%E8%99%9A%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
+                     
+										    Java强软软虚四种引用类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/JAVA/MybatisPlus%E5%88%86%E9%A1%B5/">
+                     
+										    MybatisPlus分页
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/JAVA/SSM%E7%AC%94%E8%AE%B0/">
+                     
+										    SSM笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/JAVA/Spring%E6%B3%A8%E8%A7%A3/">
+                     
+										    Spring注解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/JAVA/hashcode%E5%92%8Cequals/">
+                     
+										    hashcode和equals
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/JAVA/java%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/">
+                     
+										    java基础笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										70算法
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/70%E7%AE%97%E6%B3%95/%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E6%95%B0/">
+                     
+										    倒数第k个数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/70%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                     
+										    数组和字符串
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/70%E7%AE%97%E6%B3%95/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">
+                     
+										    树的遍历
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										80操作系统
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/80%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AF%BC%E8%AE%BA/">
+                     
+										    操作系统导论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/80%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%9C%AF%E8%AF%AD%E8%A1%A8/">
+                     
+										    术语表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										90杂项
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/win%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6/">
+                     
+										    win链接文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/%E5%AD%A6%E6%9C%AF%E6%8A%A5%E5%91%8APPT%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-hxt/">
+                     
+										    学术报告PPT设计指南-hxt
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/%E5%BF%AB%E9%80%9F%E6%8E%8C%E6%8F%A1%E4%B8%80%E9%97%A8%E6%8A%80%E6%9C%AF/">
+                     
+										    快速掌握一门技术
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	java基础笔记
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>kong lei</span>
+	<span>2024-05-28 20:01:27</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h1 id="java基础笔记"><a href="#java基础笔记" class="headerlink" title="java基础笔记"></a>java基础笔记</h1><h1 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h1><h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="数据储存"><a href="#数据储存" class="headerlink" title="数据储存"></a>数据储存</h3><p>程序在运行时是如何存储的呢？尤其是内存是怎么分配的。有5个不同的地方可以存储数据：</p>
+<p><strong>寄存器</strong>（Registers）最快的存储区域，位于 CPU 内部 <a target="_blank" rel="noopener" href="https://lingcoder.github.io/OnJava8/#/%E5%A4%A7%E5%A4%9A%E6%95%B0%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E8%8A%AF%E7%89%87%E9%83%BD%E6%9C%89%E9%A2%9D%E5%A4%96%E7%9A%84%E9%AB%98%E9%80%9F%E7%BC%93%E5%86%B2%E5%AD%98%E5%82%A8%E5%99%A8%EF%BC%8C%E4%BD%86%E8%BF%99%E6%98%AF%E6%8C%89%E7%85%A7%E4%BC%A0%E7%BB%9F%E5%AD%98%E5%82%A8%E5%99%A8%E8%80%8C%E4%B8%8D%E6%98%AF%E5%AF%84%E5%AD%98%E5%99%A8%E3%80%82">^2</a>。然而，寄存器的数量十分有限，所以寄存器根据需求进行分配。我们对其没有直接的控制权，也无法在自己的程序里找到寄存器存在的踪迹（另一方面，C&#x2F;C++ 允许开发者向编译器建议寄存器的分配）。</p>
+<p><strong>栈内存</strong>（Stack）存在于常规内存 RAM（随机访问存储器，Random Access Memory）区域中，可通过栈指针获得处理器的直接支持。栈指针下移分配内存，上移释放内存。这是一种仅次于寄存器的非常快速有效的分配存储方式。创建程序时，Java 系统必须知道栈内保存的所有项的生命周期。这种约束限制了程序的灵活性。因此，虽然在栈内存上存在一些 Java 数据（如对象引用），但 Java 对象本身的数据却是保存在堆内存的。</p>
+<p><strong>堆内存</strong>（Heap）这是一种通用的内存池（也在 RAM 区域），所有 Java 对象都存在于其中。与栈内存不同，编译器不需要知道对象必须在堆内存上停留多长时间。因此，用堆内存保存数据更具灵活性。创建一个对象时，只需用 <code>new</code> 命令实例化对象即可，当执行代码时，会自动在堆中进行内存分配。这种灵活性是有代价的：分配和清理堆内存要比栈内存需要更多的时间（如果可以用 Java 在栈内存上创建对象，就像在 C++ 中那样的话）。随着时间的推移，Java 的堆内存分配机制现在已经非常快，因此这不是一个值得关心的问题了。</p>
+<p><strong>常量存储</strong>（Constant storage）常量值通常直接放在程序代码中，因为它们永远不会改变。如需严格保护，可考虑将它们置于只读存储器 ROM （只读存储器，Read Only Memory）中 <a target="_blank" rel="noopener" href="https://lingcoder.github.io/OnJava8/#/%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%E6%98%AF%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E3%80%82%E6%89%80%E6%9C%89%E6%96%87%E5%AD%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%80%BC%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%83%BD%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%94%BE%E5%85%A5%E7%89%B9%E6%AE%8A%E7%9A%84%E9%9D%99%E6%80%81%E5%AD%98%E5%82%A8%E4%B8%AD%E3%80%82">^3</a>。</p>
+<p><strong>非 RAM 存储</strong>（Non-RAM storage）数据完全存在于程序之外，在程序未运行以及脱离程序控制后依然存在。两个主要的例子：（1）序列化对象：对象被转换为字节流，通常被发送到另一台机器；（2）持久化对象：对象被放置在磁盘上，即使程序终止，数据依然存在。这些存储的方式都是将对象转存于另一个介质中，并在需要时恢复成常规的、基于 RAM 的对象。Java 为轻量级持久化提供了支持。而诸如 JDBC 和 Hibernate 这些类库为使用数据库存储和检索对象信息提供了更复杂的支持。</p>
+<h3 id="基本数据类型-1"><a href="#基本数据类型-1" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>大小</th>
+<th>最小值</th>
+<th>最大值</th>
+<th>包装类型</th>
+<th>初始值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16 bits</td>
+<td>Unicode 0</td>
+<td>Unicode 216 -1</td>
+<td>Character</td>
+<td>\u0000 (null)</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>8 bits</td>
+<td>-128</td>
+<td>+127</td>
+<td>Byte</td>
+<td>(byte) 0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16 bits</td>
+<td>- 215</td>
+<td>+ 215 -1</td>
+<td>Short</td>
+<td>(short) 0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32 bits</td>
+<td>- 231</td>
+<td>+ 231 -1</td>
+<td>Integer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64 bits</td>
+<td>- 263</td>
+<td>+ 263 -1</td>
+<td>Long</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32 bits</td>
+<td>IEEE754</td>
+<td>IEEE754</td>
+<td>Float</td>
+<td>0f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64 bits</td>
+<td>IEEE754</td>
+<td>IEEE754</td>
+<td>Double</td>
+<td>0d</td>
+</tr>
+<tr>
+<td>void</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Void</td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th>字面量前导</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>16</td>
+<td>0x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0b</td>
+</tr>
+</tbody></table>
+<p>如果类的成员变量（字段）是基本类型，那么在类初始化时，这些类型将会被赋予一个初始值。**(这些默认值仅在 Java 初始化类的时候才会被赋予。)**</p>
+<p>所有的数值类型都是有正&#x2F;负符号的。布尔（boolean）类型的大小没有明确的规定，通常定义为取字面值 “true” 或 “false” 。基本类型有自己对应的包装类型，如果你希望在堆内存里表示基本类型的数据，就需要用到它们的包装类。</p>
+<p><strong>浮点数强转整数时小数位被截断</strong></p>
+<h3 id="数组的储存"><a href="#数组的储存" class="headerlink" title="数组的储存"></a>数组的储存</h3><p>在 Java 中，数组使用前需要被初始化，并且不能访问数组长度以外的数据。这种范围检查，是以每个数组上少量的内存开销及运行时检查下标的额外时间为代价的，但由此换来的安全性和效率的提高是值得的。（并且 Java 经常可以优化这些操作）。</p>
+<p>当我们创建对象数组时，实际上是创建了一个引用数组，并且每个引用的初始值都为 <strong>null</strong> 。在使用该数组之前，我们必须为每个引用指定一个对象 。如果我们尝试使用为 <strong>null</strong> 的引用，则会在运行时报错。因此，在 Java 中就防止了数组操作的常规错误。</p>
+<p>我们还可创建基本类型的数组。编译器通过将该数组的内存全部置零来保证初始化。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>在 Java 中，我们使用术语 <em>方法</em>（method）来表示“做某事的方式”。格式如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[返回类型] [方法名](<span class="comment">/*参数列表*/</span>)&#123;     <span class="comment">// 方法体 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在 Java 中，方法决定对象能接收哪些消息。方法的基本组成部分包括名称、参数、返回类型、方法体。</p>
+<p>方法的返回类型表明了当你调用它时会返回的结果类型。参数列表则显示了可被传递到方法内部的参数类型及名称。<strong>方法名</strong>和<strong>参数列表</strong>统称为<strong>方法签名</strong>（signature of the method）。<strong>签名作为方法的唯一标识</strong>。（<strong>只改变返回类型不构成重载</strong>）</p>
+<p>Java 中的方法只能作为类的一部分创建。它只能被对象所调用 <a target="_blank" rel="noopener" href="https://lingcoder.github.io/OnJava8/#/%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%EF%BC%8C%E6%88%91%E4%BB%AC%E5%BE%88%E5%BF%AB%E5%B0%B1%E8%83%BD%E6%8E%A5%E8%A7%A6%E5%88%B0%EF%BC%8C%E5%AE%83%E5%8F%AF%E4%BB%A5%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E7%9B%B4%E6%8E%A5%E8%A2%AB%E7%B1%BB%E8%B0%83%E7%94%A8%E3%80%82">^4</a>，并且该对象必须有权限来执行调用。若对象调用错误的方法，则程序将在编译时报错</p>
+<h3 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h3><p><strong>static</strong> 关键字（从 C++ 采用）就符合上述两点要求。当我们说某个事物是静态时，就意味着该字段或方法不依赖于任何特定的对象实例 。 即使我们从未创建过该类的对象，也可以调用其静态方法或访问其静态字段。相反，对于普通的非静态字段和方法，我们必须要先创建一个对象并使用该对象来访问字段或方法，因为非静态字段和方法必须与特定对象关联</p>
+<p>静态变量 <code>i</code> 仍只占一份存储空间。两个对象都会<strong>共享</strong>相同的变量 <code>i</code></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>加号 <code>+</code>、减号 <code>-</code>、除号 <code>/</code>、乘号 <code>*</code> 以及取模 <code>%</code>（从整数除法中获得余数）。整数除法会直接砍掉小数，而不是进位。（<strong>浮点数参与取模运算产生浮点数</strong>）</p>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><p>关系运算符会通过产生一个布尔（<strong>boolean</strong>）结果来表示操作数之间的关系。如果关系为真，则结果为 <strong>true</strong>，如果关系为假，则结果为 <strong>false</strong>。关系运算符包括小于 <code>&lt;</code>，大于 <code>&gt;</code>，小于或等于 <code>&lt;=</code>，大于或等于 <code>&gt;=</code>，等于 <code>==</code> 和不等于 <code>！=</code>。<code>==</code> 和 <code>!=</code> 可用于所有基本类型，但其他运算符不能用于基本类型 <strong>boolean</strong>，因为布尔值只能表示 <strong>true</strong> 或 <strong>false</strong>，所以比较它们之间的“大于”或“小于”没有意义。</p>
+<p>Integer 内部维护着一个 IntegerCache 的缓存，默认缓存范围是 [-128, 127]，所以 [-128, 127] 之间的值用 <code>==</code> 和 <code>!=</code> 比较也能能到正确的结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(x = y) &#123;<span class="comment">// ...&#125;当x，y不都为布尔类型时，会产生编译器错误</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>每个逻辑运算符 <code>&amp;&amp;</code> （<strong>AND</strong>）、<code>||</code>（<strong>OR</strong>）和 <code>!</code>（<strong>非</strong>）根据参数的逻辑关系生成布尔值 <code>true</code> 或 <code>false</code>，</p>
+<p><strong>只能使用布尔类型参加运算</strong></p>
+<p><code>&amp;&amp;</code> ，<code>||</code>为短路运算，一旦能够确定结果，后面不会继续执行</p>
+<p><code>&amp;</code> ，<code>|</code>会计算所有条件</p>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>若两个输入位都是 1，则按位“与运算符” <code>&amp;</code> 运算后结果是 1，否则结果是 0。若两个输入位里至少有一个是 1，则按位“或运算符” <code>|</code> 运算后结果是 1；只有在两个输入位都是 0 的情况下，运算结果才是 0。若两个输入位的某一个是 1，另一个不是 1，那么按位“异或运算符” <code>^</code> 运算后结果才是 1。按位“非运算符” <code>~</code> 属于一元运算符；它只对一个自变量进行操作（其他所有运算符都是二元运算符）。按位非运算后结果与输入位相反。例如输入 0，则输出 1；输入 1，则输出 0。</p>
+<p>位运算符和逻辑运算符都使用了同样的字符，只不过数量不同。位短，所以位运算符只有一个字符。位运算符可与等号 <code>=</code> 联合使用以接收结果及赋值：<code>&amp;=</code>，<code>|=</code> 和 <code>^=</code> 都是合法的（由于 <code>~</code> 是一元运算符，所以不可与 <code>=</code> 联合使用）。</p>
+<h3 id="位移运算符"><a href="#位移运算符" class="headerlink" title="位移运算符"></a>位移运算符</h3><p>移位运算符面向的运算对象也是二进制的“位”。它们只能用于处理整数类型（基本类型的一种）。</p>
+<p>左移位运算符 <code>&lt;&lt;</code> 能将其左边的运算对象向左移动右侧指定的位数（在低位补 0）。</p>
+<p>右移位运算符 <code>&gt;&gt;</code> 则相反。右移位运算符有“正”、“负”值：若值为正，则在高位插入 0；若值为负，则在高位插入 1。</p>
+<p>Java 也添加了一种“不分正负”的右移位运算符（&gt;&gt;&gt;），它使用了“零扩展”（zero extension）：无论正负，都在高位插入 0。这一运算符是 C&#x2F;C++ 没有的。</p>
+<p>如果移动 <strong>char</strong>、<strong>byte</strong> 或 <strong>short</strong>，则会在移动发生之前将其提升为 <strong>int</strong>，结果为 <strong>int</strong>。仅使用右值（rvalue）的 5 个低阶位。这可以防止我们移动超过 <strong>int</strong> 范围的位数。若对一个 <strong>long</strong> 值进行处理，最后得到的结果也是 <strong>long</strong>。</p>
+<p>移位可以与等号 <code>&lt;&lt;=</code> 或 <code>&gt;&gt;=</code> 或 <code>&gt;&gt;&gt;=</code> 组合使用。左值被替换为其移位运算后的值。但是，问题来了，当无符号右移与赋值相结合时，若将其与 <strong>byte</strong> 或 <strong>short</strong> 一起使用的话，则结果错误。取而代之的是，它们被提升为 <strong>int</strong> 型并右移，但在重新赋值时被截断。在这种情况下，结果为 -1。</p>
+<h2 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h2><h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="对象初始化"><a href="#对象初始化" class="headerlink" title="对象初始化"></a>对象初始化</h2><p>在 Java 中，类的设计者通过构造器保证每个对象的初始化。如果一个类有构造器，那么 Java 会在用户使用对象之前（即对象刚创建完成）自动调用对象的构造器方法，从而保证初始化。</p>
+<p>Java 中 <strong>构造器名称与类名相同</strong>。在初始化过程中自动调用构造器方法是有意义的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Rock</span> &#123;    Rock() &#123; <span class="comment">// 这是一个构造器        System.out.print(&quot;Rock &quot;);    &#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>类的 <code>final</code>成员变量必须满足以下其中一个条件</p>
+<p>1在构造函数中赋值</p>
+<p>2初始化赋值</p>
+<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><p>每个被重载的方法必须有独一无二的参数列表。你稍微思考下，就会很明了了，除了通过参数列表的不同来区分两个相同命名的方法，其他也没什么方式了。你甚至可以根据参数列表中的参数顺序来区分不同的方法，尽管这会造成代码难以维护。</p>
+<p><strong>只能通过方法名和参数列表</strong>，不能通过方法名和返回值区分方法，</p>
+<p>你可以调用一个方法且忽略返回值。这叫做调用一个函数的副作用，因为你<strong>不在乎返回值</strong>，只是想利用方法做些事。</p>
+<h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1>
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/05/28/70%E7%AE%97%E6%B3%95/%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E6%95%B0/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  倒数第k个数
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/05/28/60%E8%AF%AD%E8%A8%80/JAVA/hashcode%E5%92%8Cequals/">
+                JAVA
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">kong lei</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
