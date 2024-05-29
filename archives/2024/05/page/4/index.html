@@ -1031,25 +1031,6 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SPI/">
-				<h2 class="index-title">
-					SPI
-				</h2>
-				<div class="index-brief">
-					SPI简介概述SPI是串行外设接口，serial peripheral interface的缩写，是一种高速的，全双工，同步的通信总线。
-SPI总线是一种4线总线，因其硬件功能很强，所以与SPI有关的软件就相当简单，使 cpu 有更多的时间处理其他事务。正是因为这种简单易用的特性，越来越多的芯片集成
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SENT/">
 				<h2 class="index-title">
 					SENT
@@ -1068,13 +1049,13 @@ SPI总线是一种4线总线，因其硬件功能很强，所以与SPI有关的�
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/FLASH/">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SPI/">
 				<h2 class="index-title">
-					FLASH
+					SPI
 				</h2>
 				<div class="index-brief">
-					FLASH
-一、FLASH简介FLASH存储器又称为闪存，为可重复擦写的存储器，容量比EEPROM大的多。 FLASH在写入数据时只能把1改成0，而0无法直接改成1，因此要写入数据时，必须先执行擦除操作，而一次擦除操作无法仅擦除一个字节，必须将一整块区域的数据全部改成1。因此FLASH操作的特性是擦
+					SPI简介概述SPI是串行外设接口，serial peripheral interface的缩写，是一种高速的，全双工，同步的通信总线。
+SPI总线是一种4线总线，因其硬件功能很强，所以与SPI有关的软件就相当简单，使 cpu 有更多的时间处理其他事务。正是因为这种简单易用的特性，越来越多的芯片集成
 					...
 				</div>
 			</a>
@@ -1100,6 +1081,25 @@ LAM逻辑分析
 ECM事件组合模块
 
 16 个过滤预分频通道(Filte
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-28</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/FLASH/">
+				<h2 class="index-title">
+					FLASH
+				</h2>
+				<div class="index-brief">
+					FLASH
+一、FLASH简介FLASH存储器又称为闪存，为可重复擦写的存储器，容量比EEPROM大的多。 FLASH在写入数据时只能把1改成0，而0无法直接改成1，因此要写入数据时，必须先执行擦除操作，而一次擦除操作无法仅擦除一个字节，必须将一整块区域的数据全部改成1。因此FLASH操作的特性是擦
 					...
 				</div>
 			</a>
@@ -1217,17 +1217,22 @@ BSP视频教程第25期：CAN&#x2F;CANFD&#x2F;CANopen专题，CAN知识点干货
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/WDG/">
 				<h2 class="index-title">
-					修改delay实现
+					WDG
 				</h2>
 				<div class="index-brief">
-					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
+					WDG模式简介MCAL Wdg模块定义了三种模式，具体定义见下表：
 
-TIMX ： 使用TIM定时器，但是会占用资源
-SysTick：系统定时器，被占用了
-count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
-DWT-&gt
+
+
+模式定义
+模式描述
+
+
+
+Off Mode
+该模式下，Wdg硬件关闭。有时候我们可能需要将整个ECU关闭，而不需要看门狗提供周期复位功能，这种情况下可使用该模式。但对于一些安全性要求很高的系统，通常关闭Wdg是不允许的，这种情
 					...
 				</div>
 			</a>

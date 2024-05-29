@@ -1031,22 +1031,17 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/WDG/">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
 				<h2 class="index-title">
-					WDG
+					修改delay实现
 				</h2>
 				<div class="index-brief">
-					WDG模式简介MCAL Wdg模块定义了三种模式，具体定义见下表：
+					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
 
-
-
-模式定义
-模式描述
-
-
-
-Off Mode
-该模式下，Wdg硬件关闭。有时候我们可能需要将整个ECU关闭，而不需要看门狗提供周期复位功能，这种情况下可使用该模式。但对于一些安全性要求很高的系统，通常关闭Wdg是不允许的，这种情
+TIMX ： 使用TIM定时器，但是会占用资源
+SysTick：系统定时器，被占用了
+count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
+DWT-&gt
 					...
 				</div>
 			</a>
