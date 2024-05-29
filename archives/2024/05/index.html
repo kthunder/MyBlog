@@ -442,6 +442,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/29/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%B7%B3%E5%8F%98/">
+                     
+										    全局变量跳变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -568,6 +579,17 @@
 									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/FLASH/">
                      
 										    FLASH
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/29/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/I2C/">
+                     
+										    I2C
                      
 									</a>
 								</li>
@@ -1031,6 +1053,53 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/05/29/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%B7%B3%E5%8F%98/">
+				<h2 class="index-title">
+					全局变量跳变
+				</h2>
+				<div class="index-brief">
+					现象在使用trace工具时，可以观测一个变量的实时变化（基于固定时间长度采样）
+在使用ETAS的AUTOSAR OS时，全局变量会随机跳变到很奇怪的值（有时候甚至是一个变量的地址）
+在不使用操作系统时，不会跳变
+思路
+首先考虑是否被其他函数意外篡改掉
+通过全局搜索变量有没有被其他函数的语句写入
+
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-29</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/29/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/I2C/">
+				<h2 class="index-title">
+					I2C
+				</h2>
+				<div class="index-brief">
+					I2C简介I2C总线是两线串行接口，有串行数据线SDA和串行时钟线SCL组成，每个设备都有一个唯一的地址，可收可发，可配置为从机或者主机。仅由主机在总线上发起数据传输并生成时钟信号。此时，任何被寻址的设备都被认为是一个从机。
+I2C支持三种传输模式
+
+标准模式：数据传输速率0~100Kb&#x2F;
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-29</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/%E8%8A%AF%E7%89%87%E5%8E%9F%E5%8E%82%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
 				<h2 class="index-title">
 					芯片原厂软件开发
@@ -1106,12 +1175,12 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/%E2%80%9C%E5%9B%9A%E5%BE%92%E5%9B%B0%E5%A2%83%E2%80%9D%E5%8D%9A%E5%BC%88/">
+			<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/%E2%80%9C%E4%BA%89%E5%BD%93%E5%B0%91%E6%95%B0%E8%80%85%E2%80%9D%E5%8D%9A%E5%BC%88/">
 				<h2 class="index-title">
-					“囚徒困境”博弈
+					“争当少数者”博弈
 				</h2>
 				<div class="index-brief">
-					“囚徒困境”博弈囚徒困境作为一个经典的博弈模型受到广泛关注。这个博弈模型假设两个小偷合伙作案时被捕，分别被关在不同的屋子里，如果双方都拒绝承认同伴的罪行，则由于证据不足两人都会被轻判(收益为R)；为此，警方设计了一个机制：如果一方出卖同伴，而另一方保持忠诚，则背叛者将无罪释放(收益为T)；坚持忠诚的
+					“争当少数者”博弈该模型由两位数学家查勒特和张翼成于1997年提出，他们假设在一个系统中有多(奇数)个参与者，在某一时刻各自独立地在两个策略中做出选择，参与人数少的策略获胜。该模型的核心思想是少数者获胜，这是从实际中提炼出来的一个好模型，股票交易就是一个典型例子。需要指出，“少数者”博弈模型是对著名
 					...
 				</div>
 			</a>
@@ -1124,12 +1193,12 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/%E2%80%9C%E4%BA%89%E5%BD%93%E5%B0%91%E6%95%B0%E8%80%85%E2%80%9D%E5%8D%9A%E5%BC%88/">
+			<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/%E2%80%9C%E5%9B%9A%E5%BE%92%E5%9B%B0%E5%A2%83%E2%80%9D%E5%8D%9A%E5%BC%88/">
 				<h2 class="index-title">
-					“争当少数者”博弈
+					“囚徒困境”博弈
 				</h2>
 				<div class="index-brief">
-					“争当少数者”博弈该模型由两位数学家查勒特和张翼成于1997年提出，他们假设在一个系统中有多(奇数)个参与者，在某一时刻各自独立地在两个策略中做出选择，参与人数少的策略获胜。该模型的核心思想是少数者获胜，这是从实际中提炼出来的一个好模型，股票交易就是一个典型例子。需要指出，“少数者”博弈模型是对著名
+					“囚徒困境”博弈囚徒困境作为一个经典的博弈模型受到广泛关注。这个博弈模型假设两个小偷合伙作案时被捕，分别被关在不同的屋子里，如果双方都拒绝承认同伴的罪行，则由于证据不足两人都会被轻判(收益为R)；为此，警方设计了一个机制：如果一方出卖同伴，而另一方保持忠诚，则背叛者将无罪释放(收益为T)；坚持忠诚的
 					...
 				</div>
 			</a>
@@ -1175,45 +1244,6 @@
 PowerPoint版本
 
 在开始制作PPT之前，了解学术报告的场合，思考你的PPT会在什么环境下放映。如果硬件条件不好或没有安装Powerpoint软件，可以使用Beamer之类的LaTeX包制作幻灯片PDF放映。PPT制作-般使用.pptx格式，如果放映环
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/28/80%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%9C%AF%E8%AF%AD%E8%A1%A8/">
-				<h2 class="index-title">
-					术语表
-				</h2>
-				<div class="index-brief">
-					程序计数器 （Program Counter，PC）（有时称为指令指针，Instruction Pointer 或 IP）告诉我们程序当前 正在执行哪个指令
-栈指针（stack pointer）和相关的帧指针（frame pointer）用于 管理函数参数栈、局部变量和返回地址。
-上下文切换（con
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/28/90%E6%9D%82%E9%A1%B9/win%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6/">
-				<h2 class="index-title">
-					win链接文件
-				</h2>
-				<div class="index-brief">
-					使用软件Link Shell Extension
-使用python12345678910import ossrc = &quot;C:\\\\GIT\\\\GIT-ChangSha\\\\a8v2_mcal-safetylib-bsp\\\\m7\\\\assembly\\\\plugins\\\\
 					...
 				</div>
 			</a>

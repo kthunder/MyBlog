@@ -442,6 +442,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/29/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%B7%B3%E5%8F%98/">
+                     
+										    全局变量跳变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -568,6 +579,17 @@
 									<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/FLASH/">
                      
 										    FLASH
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/29/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/I2C/">
+                     
+										    I2C
                      
 									</a>
 								</li>
@@ -1031,6 +1053,54 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/STM/">
+				<h2 class="index-title">
+					STM
+				</h2>
+				<div class="index-brief">
+					STMSTM：系统定时器(System Timer)System Timer 是一个全局定时器，设计用于高精度和长周期的全局系统定时。
+框图
+image.png
+功能特性STM模块的主要功能特性如下
+
+64位向上计数的计数器
+所有64位可以被同步读取
+64位定时器中的不同32位块可以被同步读取
+基于
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-28</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/WDG/">
+				<h2 class="index-title">
+					WDG
+				</h2>
+				<div class="index-brief">
+					WDG概述看门狗（watchdog timer）是一个定时器电路
+当计数器到达极限时会产生中断或者复位信号
+一般有一个输入，叫喂狗(kicking the dog&#x2F;service the dog）
+一个输出到MCU的RST端
+MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给 WD
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-28</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SENT/">
 				<h2 class="index-title">
 					SENT
@@ -1186,48 +1256,6 @@ BSP视频教程第25期：CAN&#x2F;CANFD&#x2F;CANopen专题，CAN知识点干货
 				</h2>
 				<div class="index-brief">
 					主要目录介绍12345678STM32Cube_FW_F1_V1.8.0├── Documentation					//STM32CubeF1使用指南(英文版)├── Drivers							//硬件层程序├── Middlewares						//库├── Projects						//包
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/">
-				<h2 class="index-title">
-					MCAL
-				</h2>
-				<div class="index-brief">
-					MCALWDG
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
-				<h2 class="index-title">
-					修改delay实现
-				</h2>
-				<div class="index-brief">
-					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
-
-TIMX ： 使用TIM定时器，但是会占用资源
-SysTick：系统定时器，被占用了
-count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
-DWT-&gt
 					...
 				</div>
 			</a>
