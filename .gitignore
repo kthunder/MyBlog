@@ -1,4 +1,4 @@
 node_modules
 db.json
 public
-# /source/_posts/*
+/source/_posts/*
