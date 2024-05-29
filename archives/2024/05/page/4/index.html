@@ -1068,31 +1068,6 @@ SPI总线是一种4线总线，因其硬件功能很强，所以与SPI有关的�
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/IOM/">
-				<h2 class="index-title">
-					IOM
-				</h2>
-				<div class="index-brief">
-					IOM概述IOM Input Output Monitor ，是芯片IO口监控模块，用于监控外设输入输出信号是否满足期望时序。如果不满足就报错。
-功能框图
-image-20230406115021845
-特性FPC滤波预分频器
-LAM逻辑分析
-ECM事件组合模块
-
-16 个过滤预分频通道(Filte
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/FLASH/">
 				<h2 class="index-title">
 					FLASH
@@ -1112,12 +1087,19 @@ ECM事件组合模块
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/ENDINIT/">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/IOM/">
 				<h2 class="index-title">
-					ENDINIT
+					IOM
 				</h2>
 				<div class="index-brief">
-					ENDINIT简介SCU内置endinit watchdog，用于控制系统寄存器访问保护，被endinit保护的寄存器写操作需要先开启endinit watchdog，并在watchdog设定的时间范围内完成配置，之后重新锁定endini，否则会输出报警。（endinit清除需要一定时间，建议在清除
+					IOM概述IOM Input Output Monitor ，是芯片IO口监控模块，用于监控外设输入输出信号是否满足期望时序。如果不满足就报错。
+功能框图
+image-20230406115021845
+特性FPC滤波预分频器
+LAM逻辑分析
+ECM事件组合模块
+
+16 个过滤预分频通道(Filte
 					...
 				</div>
 			</a>
@@ -1149,6 +1131,24 @@ Controller Area Network 控制局域网总线
 
 外部参考资料控制器區域網路
 BSP视频教程第25期：CAN&#x2F;CANFD&#x2F;CANopen专题，CAN知识点干货分享, 收发执行过程和错误帧处理（2023-01-03）
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-28</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/ENDINIT/">
+				<h2 class="index-title">
+					ENDINIT
+				</h2>
+				<div class="index-brief">
+					ENDINIT简介SCU内置endinit watchdog，用于控制系统寄存器访问保护，被endinit保护的寄存器写操作需要先开启endinit watchdog，并在watchdog设定的时间范围内完成配置，之后重新锁定endini，否则会输出报警。（endinit清除需要一定时间，建议在清除
 					...
 				</div>
 			</a>
@@ -1217,22 +1217,17 @@ BSP视频教程第25期：CAN&#x2F;CANFD&#x2F;CANopen专题，CAN知识点干货
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/WDG/">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
 				<h2 class="index-title">
-					WDG
+					修改delay实现
 				</h2>
 				<div class="index-brief">
-					WDG模式简介MCAL Wdg模块定义了三种模式，具体定义见下表：
+					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
 
-
-
-模式定义
-模式描述
-
-
-
-Off Mode
-该模式下，Wdg硬件关闭。有时候我们可能需要将整个ECU关闭，而不需要看门狗提供周期复位功能，这种情况下可使用该模式。但对于一些安全性要求很高的系统，通常关闭Wdg是不允许的，这种情
+TIMX ： 使用TIM定时器，但是会占用资源
+SysTick：系统定时器，被占用了
+count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
+DWT-&gt
 					...
 				</div>
 			</a>
