@@ -115,7 +115,7 @@
 	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
 	
 	<div id="site-toc">
-		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<input id="search-input" class="search-input" type="search" placeholder="Aramak için Enter&#39;a basın">
 		<div id="tree">
 			
 
@@ -1021,6 +1021,29 @@
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
+				<h2 class="index-title">
+					修改delay实现
+				</h2>
+				<div class="index-brief">
+					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
+
+TIMX ： 使用TIM定时器，但是会占用资源
+SysTick：系统定时器，被占用了
+count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
+DWT-&gt
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-28</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/WDG/">
 				<h2 class="index-title">
 					WDG
@@ -1037,29 +1060,6 @@
 
 Off Mode
 该模式下，Wdg硬件关闭。有时候我们可能需要将整个ECU关闭，而不需要看门狗提供周期复位功能，这种情况下可使用该模式。但对于一些安全性要求很高的系统，通常关闭Wdg是不允许的，这种情
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
-				<h2 class="index-title">
-					修改delay实现
-				</h2>
-				<div class="index-brief">
-					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
-
-TIMX ： 使用TIM定时器，但是会占用资源
-SysTick：系统定时器，被占用了
-count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
-DWT-&gt
 					...
 				</div>
 			</a>
@@ -1093,12 +1093,12 @@ F103移植FreeRTOS
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/F103%E7%A7%BB%E6%A4%8DFreeRTOS/">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/Contex-M3%E5%86%85%E6%A0%B8%E6%A6%82%E8%BF%B0/">
 				<h2 class="index-title">
-					F103移植FreeRTOS
+					Contex-M3内核概述
 				</h2>
 				<div class="index-brief">
-					F103移植FreeRTOSF103移植FreeRTOS添加相关文件，在makeflie加入源文件，编译1FreeRTOS├─include│      atomic.h│      croutine.h│      deprecated_definitions.h│      event_grou
+					Contex-M3内核概述Contex-M3简介Cortex-M3是一个32位处理器内核。内部的数据路径是32位的，寄存器是32位的，存储器接口也是32位的。CM3采用了哈佛结构，拥有独立的指令总线和数据总线，可以让取指与数据访问并行不悖。这样一来数据访问不再占用指令总线，从而提升了性能。为实现这个
 					...
 				</div>
 			</a>
@@ -1111,12 +1111,12 @@ F103移植FreeRTOS
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/Contex-M3%E5%86%85%E6%A0%B8%E6%A6%82%E8%BF%B0/">
+			<a href="/2024/05/28/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/F103%E7%A7%BB%E6%A4%8DFreeRTOS/">
 				<h2 class="index-title">
-					Contex-M3内核概述
+					F103移植FreeRTOS
 				</h2>
 				<div class="index-brief">
-					Contex-M3内核概述Contex-M3简介Cortex-M3是一个32位处理器内核。内部的数据路径是32位的，寄存器是32位的，存储器接口也是32位的。CM3采用了哈佛结构，拥有独立的指令总线和数据总线，可以让取指与数据访问并行不悖。这样一来数据访问不再占用指令总线，从而提升了性能。为实现这个
+					F103移植FreeRTOSF103移植FreeRTOS添加相关文件，在makeflie加入源文件，编译1FreeRTOS├─include│      atomic.h│      croutine.h│      deprecated_definitions.h│      event_grou
 					...
 				</div>
 			</a>
