@@ -1119,12 +1119,25 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/ENDINIT/">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/CAN/">
 				<h2 class="index-title">
-					ENDINIT
+					CAN
 				</h2>
 				<div class="index-brief">
-					ENDINIT简介SCU内置endinit watchdog，用于控制系统寄存器访问保护，被endinit保护的寄存器写操作需要先开启endinit watchdog，并在watchdog设定的时间范围内完成配置，之后重新锁定endini，否则会输出报警。（endinit清除需要一定时间，建议在清除
+					CAN前言术语表
+
+
+术语
+解释
+
+
+
+CAN
+Controller Area Network 控制局域网总线
+
+
+外部参考资料控制器區域網路
+BSP视频教程第25期：CAN&#x2F;CANFD&#x2F;CANopen专题，CAN知识点干货分享, 收发执行过程和错误帧处理（2023-01-03）
 					...
 				</div>
 			</a>
@@ -1221,12 +1234,17 @@ Off Mode
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/F103%E7%A7%BB%E6%A4%8DFreeRTOS/">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
 				<h2 class="index-title">
-					F103移植FreeRTOS
+					修改delay实现
 				</h2>
 				<div class="index-brief">
-					F103移植FreeRTOSF103移植FreeRTOS添加相关文件，在makeflie加入源文件，编译1FreeRTOS├─include│      atomic.h│      croutine.h│      deprecated_definitions.h│      event_grou
+					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
+
+TIMX ： 使用TIM定时器，但是会占用资源
+SysTick：系统定时器，被占用了
+count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
+DWT-&gt
 					...
 				</div>
 			</a>
@@ -1239,17 +1257,12 @@ Off Mode
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/F103%E7%A7%BB%E6%A4%8DFreeRTOS/">
 				<h2 class="index-title">
-					修改delay实现
+					F103移植FreeRTOS
 				</h2>
 				<div class="index-brief">
-					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
-
-TIMX ： 使用TIM定时器，但是会占用资源
-SysTick：系统定时器，被占用了
-count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
-DWT-&gt
+					F103移植FreeRTOSF103移植FreeRTOS添加相关文件，在makeflie加入源文件，编译1FreeRTOS├─include│      atomic.h│      croutine.h│      deprecated_definitions.h│      event_grou
 					...
 				</div>
 			</a>
