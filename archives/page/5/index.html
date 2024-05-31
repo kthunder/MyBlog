@@ -1081,17 +1081,12 @@ Off Mode
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/F103%E7%A7%BB%E6%A4%8DFreeRTOS/">
 				<h2 class="index-title">
-					修改delay实现
+					F103移植FreeRTOS
 				</h2>
 				<div class="index-brief">
-					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
-
-TIMX ： 使用TIM定时器，但是会占用资源
-SysTick：系统定时器，被占用了
-count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
-DWT-&gt
+					F103移植FreeRTOSF103移植FreeRTOS添加相关文件，在makeflie加入源文件，编译1FreeRTOS├─include│      atomic.h│      croutine.h│      deprecated_definitions.h│      event_grou
 					...
 				</div>
 			</a>
@@ -1104,12 +1099,17 @@ DWT-&gt
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/F103%E7%A7%BB%E6%A4%8DFreeRTOS/">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
 				<h2 class="index-title">
-					F103移植FreeRTOS
+					修改delay实现
 				</h2>
 				<div class="index-brief">
-					F103移植FreeRTOSF103移植FreeRTOS添加相关文件，在makeflie加入源文件，编译1FreeRTOS├─include│      atomic.h│      croutine.h│      deprecated_definitions.h│      event_grou
+					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
+
+TIMX ： 使用TIM定时器，但是会占用资源
+SysTick：系统定时器，被占用了
+count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
+DWT-&gt
 					...
 				</div>
 			</a>
