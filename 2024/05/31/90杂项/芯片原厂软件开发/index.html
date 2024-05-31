@@ -446,9 +446,31 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/bootload%E4%B8%AD%E8%B0%83%E7%94%A8fls%E6%93%A6%E9%99%A4%E5%A4%B1%E8%B4%A5/">
+                     
+										    bootload中调用fls擦除失败
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%B7%B3%E5%8F%98/">
                      
 										    全局变量跳变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E8%BF%90%E8%A1%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/">
+                     
+										    运行性能问题
                      
 									</a>
 								</li>
@@ -1079,8 +1101,8 @@
 
 <!-- content -->
 <div id="article-content">
-	<p><strong>一般来说，此类企业对外提供的芯片统称为解决方案，包含<code>硬件芯片</code>、<code>对应配套的软件支持包</code></strong> 。而答主所经历的这两家外企，硬件部分统一由国外团队研发，我们国内主要负责做配套的软件支持包。</p>
-<p>所以，答主就 <strong>从芯片公司软件开发的视角，分享一下个人的理解和认知</strong> ，希望能够对题主的未来选择和准备，能够有所帮助。这里， <strong>朋友们可以将芯片自带的配套软件支持包，看作是硬件和用户应用层之间的纽带</strong> 。这部分软件支持包的开发，基本完成以下功能：</p>
+	<h1 id="芯片原厂软件开发"><a href="#芯片原厂软件开发" class="headerlink" title="芯片原厂软件开发"></a>芯片原厂软件开发</h1><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一般来说，此类企业对外提供的芯片统称为解决方案，包含<code>硬件芯片</code>、<code>对应配套的软件支持包</code> 。软件团队主要负责做配套的软件支持包。</p>
+<p>芯片自带的配套软件支持包，是硬件和用户应用层之间的纽带，用于降低客户开发难度。这部分软件支持包的开发，基本完成以下功能：</p>
 <ol>
 <li><p><strong>片上单元功能库的开发</strong> 。用过Stm32单片机芯片的朋友，大概很多人都习惯了使用stm32提供的库函数的方法进行应用层代码的开发。Stm32库函数其实完全实现了硬件功能和应用开发的衔接，而这些功能库的开发，就属于芯片厂商软件开发的范畴。同理，还有很多SOC片上系统的子功能单元，比如TI8168视频处理芯片上，其中一个视频处理微单元的软件包开发，都是一样的意思和范畴。</p>
 </li>
@@ -1093,7 +1115,19 @@
 <li><p><strong>Demo代码</strong> 。很多时候，乙方公司为了加快开发进度都很喜欢移植芯片公司提供的Demo代码，所以很多时候Demo代码也是乙方公司选择芯片厂家的一个重要参考。那么自然而然的，芯片公司总需要一部分人，做Demo代码的编写和维护工作。</p>
 </li>
 </ol>
-<h1 id="驱动编写流程"><a href="#驱动编写流程" class="headerlink" title="驱动编写流程"></a>驱动编写流程</h1><ol>
+<h1 id="常用开发工具"><a href="#常用开发工具" class="headerlink" title="常用开发工具"></a>常用开发工具</h1><p>编辑器 ：vscode</p>
+<p>IDE ：ThinkTechStudio HighTec KEIL</p>
+<p>配置生成 ：EB</p>
+<p>调试 ： PLS 劳特巴赫 iSystem</p>
+<p>下载器驱动 ：openOCD</p>
+<p>文档管理 ：Polarion</p>
+<p>流程管理 ：Mantis</p>
+<p>任务管理 ：Redmain</p>
+<p>单元测试 集成测试 ：vectorCAST Polyspace</p>
+<p>代码管理 ：git gitlab SVN</p>
+<p>数字信号 ：TCANLINPro KingstVIS</p>
+<p>模拟信号 ：示波器</p>
+<h1 id="驱动编写具体的流程"><a href="#驱动编写具体的流程" class="headerlink" title="驱动编写具体的流程"></a>驱动编写具体的流程</h1><ol>
 <li>查看芯片技术手册，了解IP特性</li>
 <li>分析原理图，了解硬件电路情况（如果需要）</li>
 <li>统一命名规则</li>

@@ -444,9 +444,31 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/bootload%E4%B8%AD%E8%B0%83%E7%94%A8fls%E6%93%A6%E9%99%A4%E5%A4%B1%E8%B4%A5/">
+                     
+										    bootload中调用fls擦除失败
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%B7%B3%E5%8F%98/">
                      
 										    全局变量跳变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E8%BF%90%E8%A1%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/">
+                     
+										    运行性能问题
                      
 									</a>
 								</li>
@@ -1053,6 +1075,46 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E8%BF%90%E8%A1%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/">
+				<h2 class="index-title">
+					运行性能问题
+				</h2>
+				<div class="index-brief">
+					使能ICACHE后性能提升不大配置过程中使能MPU且在MPU中将PFLASH区域设置成了“STRONG ORDER”导致该段FLASH必须序列化而无法进CACHE，而又因为使能了CACHE功能造成不仅不能加速反而还多了CACHE读指令的开销。
+M7实际性能与CoreMark跑分差距很大M7执行速度非
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/bootload%E4%B8%AD%E8%B0%83%E7%94%A8fls%E6%93%A6%E9%99%A4%E5%A4%B1%E8%B4%A5/">
+				<h2 class="index-title">
+					bootload中调用fls擦除失败
+				</h2>
+				<div class="index-brief">
+					应用场景bootloader使用CAN与上位机通信，接收APP编译的HEX文件，将整个APP加载进SRAM中，然后调用APP中的函数操作FLASH（整个APP几乎只进行FLS操作）
+测试现象
+当完全使用bootloader加载APP进SRAM时，由于超时擦除失败，且全局变量都为0
+当从pflash启
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E7%AE%80%E5%8E%86/">
 				<h2 class="index-title">
 					简历
@@ -1077,8 +1139,10 @@
 					芯片原厂软件开发
 				</h2>
 				<div class="index-brief">
-					一般来说，此类企业对外提供的芯片统称为解决方案，包含硬件芯片、对应配套的软件支持包 。而答主所经历的这两家外企，硬件部分统一由国外团队研发，我们国内主要负责做配套的软件支持包。
-所以，答主就 从芯片公司软件开发的视角，分享一下个人的理解和认知 ，希望能够对题主的未来选择和准备，能够有所帮助。这里， 
+					芯片原厂软件开发简介一般来说，此类企业对外提供的芯片统称为解决方案，包含硬件芯片、对应配套的软件支持包 。软件团队主要负责做配套的软件支持包。
+芯片自带的配套软件支持包，是硬件和用户应用层之间的纽带，用于降低客户开发难度。这部分软件支持包的开发，基本完成以下功能：
+
+片上单元功能库的开发 。用过St
 					...
 				</div>
 			</a>
@@ -1110,27 +1174,6 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E5%AD%A6%E6%9C%AF%E6%8A%A5%E5%91%8APPT%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-hxt/">
-				<h2 class="index-title">
-					学术报告PPT设计指南-hxt
-				</h2>
-				<div class="index-brief">
-					学术报告PPT设计指南-hxt准备阶段
-PowerPoint版本
-
-在开始制作PPT之前，了解学术报告的场合，思考你的PPT会在什么环境下放映。如果硬件条件不好或没有安装Powerpoint软件，可以使用Beamer之类的LaTeX包制作幻灯片PDF放映。PPT制作-般使用.pptx格式，如果放映环
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E5%BF%AB%E9%80%9F%E6%8E%8C%E6%8F%A1%E4%B8%80%E9%97%A8%E6%8A%80%E6%9C%AF/">
 				<h2 class="index-title">
 					快速掌握一门技术
@@ -1143,6 +1186,27 @@ PowerPoint版本
 \1. 如何自学
 \2. 体系背后的逻辑
 2.1 如何掌握
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E5%AD%A6%E6%9C%AF%E6%8A%A5%E5%91%8APPT%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-hxt/">
+				<h2 class="index-title">
+					学术报告PPT设计指南-hxt
+				</h2>
+				<div class="index-brief">
+					学术报告PPT设计指南-hxt准备阶段
+PowerPoint版本
+
+在开始制作PPT之前，了解学术报告的场合，思考你的PPT会在什么环境下放映。如果硬件条件不好或没有安装Powerpoint软件，可以使用Beamer之类的LaTeX包制作幻灯片PDF放映。PPT制作-般使用.pptx格式，如果放映环
 					...
 				</div>
 			</a>
@@ -1197,46 +1261,6 @@ PowerPoint版本
 				</h2>
 				<div class="index-brief">
 					“争当少数者”博弈该模型由两位数学家查勒特和张翼成于1997年提出，他们假设在一个系统中有多(奇数)个参与者，在某一时刻各自独立地在两个策略中做出选择，参与人数少的策略获胜。该模型的核心思想是少数者获胜，这是从实际中提炼出来的一个好模型，股票交易就是一个典型例子。需要指出，“少数者”博弈模型是对著名
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/win%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6/">
-				<h2 class="index-title">
-					win链接文件
-				</h2>
-				<div class="index-brief">
-					使用软件Link Shell Extension
-使用python12345678910import ossrc = &quot;C:/GIT/GIT-ChangSha/a8v2_mcal-safetylib-bsp/m7/assembly/plugins/&quot;dest = &quot;C:
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/80%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AF%BC%E8%AE%BA/">
-				<h2 class="index-title">
-					操作系统导论
-				</h2>
-				<div class="index-brief">
-					相关链接
-官方网站：https://pages.cs.wisc.edu/~remzi&#x2F;OSTEP&#x2F;
-中文PDF：https://pages.cs.wisc.edu/~remzi&#x2F;OSTEP&#x2F;Chinese&#x2F;
-开源地址：https://github.c
 					...
 				</div>
 			</a>

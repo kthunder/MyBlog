@@ -444,9 +444,31 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/bootload%E4%B8%AD%E8%B0%83%E7%94%A8fls%E6%93%A6%E9%99%A4%E5%A4%B1%E8%B4%A5/">
+                     
+										    bootload中调用fls擦除失败
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%B7%B3%E5%8F%98/">
                      
 										    全局变量跳变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E8%BF%90%E8%A1%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/">
+                     
+										    运行性能问题
                      
 									</a>
 								</li>
@@ -1053,6 +1075,51 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Contex-M3%E4%B8%AD%E6%96%AD/STM32-%E4%B8%AD%E6%96%AD/">
+				<h2 class="index-title">
+					STM32-中断
+				</h2>
+				<div class="index-brief">
+					STM32-中断一、中断1.4、中断具体行为当CM3开始响应一个中断时，会做出如下动作：
+
+入栈：把8个寄存器的值压入栈
+取向量：从向量表中取出对应的服务程序入口地址
+选择堆栈指针MSP（主堆栈）&#x2F;PSP（进程堆栈），更新堆栈指针SP，更新链接寄存器LR，更新程序计数器PC
+
+1.4.1、
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Contex-M3%E4%B8%AD%E6%96%AD/M3%E4%B8%AD%E6%96%AD/">
+				<h2 class="index-title">
+					M3中断
+				</h2>
+				<div class="index-brief">
+					M3中断异常类型Contex-M3内核的异常响应系统支持众多系统异常和外部中断。其中编号1-15为系统异常，大于等于16的则是外部中断。除个别异常的优先级被定死外，其它异常的优先级都是可编程的。
+
+所有能打断正常执行流程的事件都称为异常。
+异常：指CM3内核的活动产生的—在执行指令或者访问储存器时产
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BSP%E6%A6%82%E8%BF%B0/">
 				<h2 class="index-title">
 					BSP概述
@@ -1262,49 +1329,6 @@ leastsignificantbit
 ?&#x3D; 如果被定义过了就不重新进行定义
 
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/LINUX/linux%E8%AE%BE%E7%BD%AE/">
-				<h2 class="index-title">
-					linux设置
-				</h2>
-				<div class="index-brief">
-					设置开发板ip123456789#配置ip和掩码ifconfig eth0 192.168.1.233 netmask 255.255.255.0#配置mac地址ifconfig eth0 hw ether 00:99:07:14:66:66#配置网关route add default gw 192
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/GIT/git%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/">
-				<h2 class="index-title">
-					git操作笔记
-				</h2>
-				<div class="index-brief">
-					git操作笔记生成ssh key修改ssh key的密码
-ssh-keygen -f .\\id_ed25519 -p
-Linux修改key权限chmod &lt;权限&gt; 文件
-chmod &lt;权限&gt; -R 目录
-&lt;权限&gt;
-
-u: Current user
-g: Curr
 					...
 				</div>
 			</a>

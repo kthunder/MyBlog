@@ -444,9 +444,31 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/bootload%E4%B8%AD%E8%B0%83%E7%94%A8fls%E6%93%A6%E9%99%A4%E5%A4%B1%E8%B4%A5/">
+                     
+										    bootload中调用fls擦除失败
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%B7%B3%E5%8F%98/">
                      
 										    全局变量跳变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E8%BF%90%E8%A1%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/">
+                     
+										    运行性能问题
                      
 									</a>
 								</li>
@@ -1053,6 +1075,54 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/WDG/">
+				<h2 class="index-title">
+					WDG
+				</h2>
+				<div class="index-brief">
+					WDG概述看门狗（watchdog timer）是一个定时器电路
+当计数器到达极限时会产生中断或者复位信号
+一般有一个输入，叫喂狗(kicking the dog&#x2F;service the dog）
+一个输出到MCU的RST端
+MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给 WD
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/STM/">
+				<h2 class="index-title">
+					STM
+				</h2>
+				<div class="index-brief">
+					STMSTM：系统定时器(System Timer)System Timer 是一个全局定时器，设计用于高精度和长周期的全局系统定时。
+框图
+image.png
+功能特性STM模块的主要功能特性如下
+
+64位向上计数的计数器
+所有64位可以被同步读取
+64位定时器中的不同32位块可以被同步读取
+基于
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SENT/">
 				<h2 class="index-title">
 					SENT
@@ -1090,6 +1160,27 @@ SPI总线是一种4线总线，因其硬件功能很强，所以与SPI有关的�
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/I2C/">
+				<h2 class="index-title">
+					I2C
+				</h2>
+				<div class="index-brief">
+					I2C简介I2C总线是两线串行接口，有串行数据线SDA和串行时钟线SCL组成，每个设备都有一个唯一的地址，可收可发，可配置为从机或者主机。仅由主机在总线上发起数据传输并生成时钟信号。此时，任何被寻址的设备都被认为是一个从机。
+I2C支持三种传输模式
+
+标准模式：数据传输速率0~100Kb&#x2F;
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/IOM/">
 				<h2 class="index-title">
 					IOM
@@ -1103,27 +1194,6 @@ LAM逻辑分析
 ECM事件组合模块
 
 16 个过滤预分频通道(Filte
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/I2C/">
-				<h2 class="index-title">
-					I2C
-				</h2>
-				<div class="index-brief">
-					I2C简介I2C总线是两线串行接口，有串行数据线SDA和串行时钟线SCL组成，每个设备都有一个唯一的地址，可收可发，可配置为从机或者主机。仅由主机在总线上发起数据传输并生成时钟信号。此时，任何被寻址的设备都被认为是一个从机。
-I2C支持三种传输模式
-
-标准模式：数据传输速率0~100Kb&#x2F;
 					...
 				</div>
 			</a>
@@ -1211,43 +1281,6 @@ BSP视频教程第25期：CAN&#x2F;CANFD&#x2F;CANopen专题，CAN知识点干货
 				<div class="index-brief">
 					Map文件解析ARM map文件.map 文件对应的中文名应该是映射文件，用来展示（映射）项目构建的链接阶段的细节。通常包含程序的全局符号、交叉引用和内存映射等等信息。目前，常见的编译器套件（实际是其中的链接器），例如， GCC、ARMCC、IAR 都可以生成 .map 文件
 基础数据类型程序编译完
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32f1xx%20HAL%E5%BA%93%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/">
-				<h2 class="index-title">
-					stm32f1xx HAL库目录介绍
-				</h2>
-				<div class="index-brief">
-					主要目录介绍12345678STM32Cube_FW_F1_V1.8.0├── Documentation					//STM32CubeF1使用指南(英文版)├── Drivers							//硬件层程序├── Middlewares						//库├── Projects						//包
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/">
-				<h2 class="index-title">
-					MCAL
-				</h2>
-				<div class="index-brief">
-					MCALWDG
-
 					...
 				</div>
 			</a>

@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		bootload中调用fls擦除失败 | 
 	 
 	kong lei&#39;s Blog
 	</title>
@@ -443,7 +445,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/bootload%E4%B8%AD%E8%B0%83%E7%94%A8fls%E6%93%A6%E9%99%A4%E5%A4%B1%E8%B4%A5/">
                      
 										    bootload中调用fls擦除失败
@@ -1072,226 +1074,82 @@
 
 	<!-- 引入正文 -->
 	<div id="content" class="content">
-		<div id="index">
-	
-		<div class="index-li">
-			<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/win%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6/">
-				<h2 class="index-title">
-					win链接文件
-				</h2>
-				<div class="index-brief">
-					使用软件Link Shell Extension
-使用python12345678910import ossrc = &quot;C:/GIT/GIT-ChangSha/a8v2_mcal-safetylib-bsp/m7/assembly/plugins/&quot;dest = &quot;C:
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/80%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AF%BC%E8%AE%BA/">
-				<h2 class="index-title">
-					操作系统导论
-				</h2>
-				<div class="index-brief">
-					相关链接
-官方网站：https://pages.cs.wisc.edu/~remzi&#x2F;OSTEP&#x2F;
-中文PDF：https://pages.cs.wisc.edu/~remzi&#x2F;OSTEP&#x2F;Chinese&#x2F;
-开源地址：https://github.c
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/80%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%9C%AF%E8%AF%AD%E8%A1%A8/">
-				<h2 class="index-title">
-					术语表
-				</h2>
-				<div class="index-brief">
-					程序计数器 （Program Counter，PC）（有时称为指令指针，Instruction Pointer 或 IP）告诉我们程序当前 正在执行哪个指令
-栈指针（stack pointer）和相关的帧指针（frame pointer）用于 管理函数参数栈、局部变量和返回地址。
-上下文切换（con
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/70%E7%AE%97%E6%B3%95/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">
-				<h2 class="index-title">
-					树的遍历
-				</h2>
-				<div class="index-brief">
-					树的遍历先序 中左右
-1,2,4,5,3,6,7
-中序 左中右
-4,2,5,1,6,3,7
-后续 左右中
-4,5,2,6,7,3,1
+		<h1 id="article-title">
+	bootload中调用fls擦除失败
+</h1>
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
+<!-- meta -->
+<div class="article-meta">
 	
-		<div class="index-li">
-			<a href="/2024/05/31/70%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-				<h2 class="index-title">
-					数组和字符串
-				</h2>
-				<div class="index-brief">
-					
-数组的操作
-读取元素：直接根据地址读取，时间复杂度为_O_(1)
-查找元素：逐个查找，时间复杂度为_O_(N)
-插入元素：可能需要移动其他元素
-删除元素：可能需要移动其他元素，时间复杂度为_O_(N)
 
-二维数组简介维数组是一种结构较为特殊的数组，只是将数组中的每个元素变成了一维数组。一维数组长度
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/70%E7%AE%97%E6%B3%95/%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E6%95%B0/">
-				<h2 class="index-title">
-					倒数第k个数
-				</h2>
-				<div class="index-brief">
-					倒数第k个数倒数第k个数给定一串数据，找出倒数第k个数据
-解决思路，使用定长队列，长度为k，列满后添加元素前进行出列操作，当入列所以数据时，队列长度为k，出列即为倒数第k个数据
+	<span>kong lei</span>
+	<span>2024-05-31 15:20:26</span>
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/hashcode%E5%92%8Cequals/">
-				<h2 class="index-title">
-					hashcode和equals
-				</h2>
-				<div class="index-brief">
-					hashcode和equals为什么要重写 hashcode 和 equals 方法？重写hashcode作用是给确定每个对象在集合中位置（也可以用来快速判重，hash不同一定不相等，否则再进行equals判定，使用短路判断节约性能）。
-重写equals作用是给确定两个对象在业务逻辑上是否相等。
-在
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/java%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/">
-				<h2 class="index-title">
-					java基础笔记
-				</h2>
-				<div class="index-brief">
-					java基础笔记基础部分基本数据类型数据储存程序在运行时是如何存储的呢？尤其是内存是怎么分配的。有5个不同的地方可以存储数据：
-寄存器（Registers）最快的存储区域，位于 CPU 内部 ^2。然而，寄存器的数量十分有限，所以寄存器根据需求进行分配。我们对其没有直接的控制权，也无法在自己的程序里
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/SSM%E7%AC%94%E8%AE%B0/">
-				<h2 class="index-title">
-					SSM笔记
-				</h2>
-				<div class="index-brief">
-					SSM笔记SSM学习笔记
-RestFul 风格概念
-Restful就是一个资源定位及资源操作的风格。不是标准也不是协议，只是一种风格。基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制。
-功能
-资源：互联网所有的事物都可以被抽象为资源
-资源操作：使用POST、DELETE、PUT、GE
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/Spring%E6%B3%A8%E8%A7%A3/">
-				<h2 class="index-title">
-					Spring注解
-				</h2>
-				<div class="index-brief">
-					Spring注解@Controller 标识一个该类是Spring MVC controller处理器，用来创建处理http请求的对象.
-1@Controllepublic class TestController &#123; @RequestMapping(&quot;/test&quot;) 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-			<a class="extend prev" rel="prev" href="/archives/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/3/">&gt;</a>
-		
-	</div>
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
 </div>
 
+<!-- content -->
+<div id="article-content">
+	<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>bootloader使用CAN与上位机通信，接收APP编译的HEX文件，将整个APP加载进SRAM中，然后调用APP中的函数操作FLASH（整个APP几乎只进行FLS操作）</p>
+<h1 id="测试现象"><a href="#测试现象" class="headerlink" title="测试现象"></a>测试现象</h1><ol>
+<li>当完全使用bootloader加载APP进SRAM时，由于超时擦除失败，且全局变量都为0</li>
+<li>当从pflash启动APP时，功能正常</li>
+</ol>
+<h1 id="问题排查结果"><a href="#问题排查结果" class="headerlink" title="问题排查结果"></a>问题排查结果</h1><p>bootloader加载APP进SRAM时，直接调用SRAM中的APP里面的函数，没有经过APP的启动和初始化流程，导致以下问题：</p>
+<ol>
+<li>init data未进行初始化，导致全局变量都是0</li>
+<li>APP内没有进行初始化，各模块未初始化，导致时钟频率全局变量值错误，进而导致FLS超时时间计算错误，正确应该是240 000 * 10000ticks，而此时是48*10000ticks，函数检测超时而退出，擦除失败</li>
+</ol>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ol>
+<li>修改链接脚本，使需要在启动时copy的数据的LMA直接与VMA相同，省去copy的过程</li>
+<li>修改Base_Drv_Timer_MicrosToTicks()函数，使转换时间的结果正确</li>
+</ol>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E8%BF%90%E8%A1%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  运行性能问题
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E7%AE%80%E5%8E%86/">
+                
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>
