@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		全局变量跳变 | 
+	 
+	kong lei&#39;s Blog
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+		<meta name="description" content="笔记本" />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "konglei.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">kong lei's Blog</a>
+
+	<ul id="menu">
+    
+
+    
+
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href='https://wujun234.com/post/Long-bitCount-jie-xi/' class="menu-item-link" target="_blank">
+            wujun234`s Blog
+          </a>
+        </li>
+      
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/kthunder' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										20项目
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01MizarU
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/01MizarU/MizarU%E6%B5%8B%E8%AF%95/">
+                     
+										    MizarU测试
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02SASP_WEB
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/02SASP_WEB/SASP-web%E5%89%8D%E7%AB%AF%E9%85%8D%E7%BD%AE/">
+                     
+										    SASP-web前端配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/02SASP_WEB/SASP-%E5%89%8D%E7%AB%AF/">
+                     
+										    SASP-前端
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03PIAS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/03PIAS/PIAS%E5%8A%9F%E8%83%BD%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/">
+                     
+										    PIAS功能流程梳理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/03PIAS/PIAS%E7%BC%96%E8%AF%91/">
+                     
+										    PIAS编译
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/03PIAS/TLS1.2%E5%8D%8F%E8%AE%AE/">
+                     
+										    TLS1.2协议
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										40工具
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										GIT
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/GIT/git%E5%AD%90%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%96%B0/">
+                     
+										    git子模块更新
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/GIT/git%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/">
+                     
+										    git操作笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										LINUX
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/LINUX/linux%E8%AE%BE%E7%BD%AE/">
+                     
+										    linux设置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MAKE
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/MAKE/GCC%E5%8F%82%E6%95%B0/">
+                     
+										    GCC参数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/MAKE/makefile/">
+                     
+										    makefile
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										50嵌入式
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/ARM%E6%9C%AF%E8%AF%AD%E8%A1%A8/">
+                     
+										    ARM术语表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										AUTOSAR OS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/AUTOSAR%20OS/OS/">
+                     
+										    OS
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BSP%E6%A6%82%E8%BF%B0/">
+                     
+										    BSP概述
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BootLoader/">
+                     
+										    BootLoader
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Contex-M3中断
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Contex-M3%E4%B8%AD%E6%96%AD/M3%E4%B8%AD%E6%96%AD/">
+                     
+										    M3中断
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Contex-M3%E4%B8%AD%E6%96%AD/STM32-%E4%B8%AD%E6%96%AD/">
+                     
+										    STM32-中断
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Debuge经验
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/Cortex-M7%E5%9C%A8%E5%88%86%E7%BB%84%E4%BC%98%E5%85%88%E7%BA%A7%E9%85%8D%E7%BD%AE%E4%B8%BA4%E6%97%B6svc%E8%A7%A6%E5%8F%91hardfault/">
+                     
+										    Cortex-M7在分组优先级配置为4时svc触发hardfault
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%B7%B3%E5%8F%98/">
+                     
+										    全局变量跳变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										FreeRTOS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/Contex-M3%E5%86%85%E6%A0%B8%E6%A6%82%E8%BF%B0/">
+                     
+										    Contex-M3内核概述
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/F103%E7%A7%BB%E6%A4%8DFreeRTOS/">
+                     
+										    F103移植FreeRTOS
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
+                     
+										    修改delay实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MCAL
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/WDG/">
+                     
+										    WDG
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Map%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">
+                     
+										    Map文件解析
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32f1xx%20HAL%E5%BA%93%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/">
+                     
+										    stm32f1xx HAL库目录介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										外设
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/CAN/">
+                     
+										    CAN
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/ENDINIT/">
+                     
+										    ENDINIT
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/FLASH/">
+                     
+										    FLASH
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/I2C/">
+                     
+										    I2C
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/IOM/">
+                     
+										    IOM
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SENT/">
+                     
+										    SENT
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/SPI/">
+                     
+										    SPI
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/STM/">
+                     
+										    STM
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/WDG/">
+                     
+										    WDG
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8C%E6%A8%A1%E5%9D%97%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF/">
+                     
+										    硬件手册模块结构模板
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                     
+										    嵌入式开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										汽车行业规范
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%B1%BD%E8%BD%A6%E8%A1%8C%E4%B8%9A%E8%A7%84%E8%8C%83/MISAR_C/">
+                     
+										    MISAR_C
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E9%93%BE%E6%8E%A5%E8%84%9A%E6%9C%AC/">
+                     
+										    链接脚本
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E9%93%BE%E6%8E%A5%E8%84%9A%E6%9C%ACGNU%E6%89%8B%E5%86%8C/">
+                     
+										    链接脚本GNU手册
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										60语言
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										C
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/C/C%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/">
+                     
+										    C代码片段
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/C/volatile/">
+                     
+										    volatile
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										JAVA
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/BigDecimal/">
+                     
+										    BigDecimal
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/Java%E5%BC%BA%E8%BD%AF%E8%BD%AF%E8%99%9A%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
+                     
+										    Java强软软虚四种引用类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/MybatisPlus%E5%88%86%E9%A1%B5/">
+                     
+										    MybatisPlus分页
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/SSM%E7%AC%94%E8%AE%B0/">
+                     
+										    SSM笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/Spring%E6%B3%A8%E8%A7%A3/">
+                     
+										    Spring注解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/hashcode%E5%92%8Cequals/">
+                     
+										    hashcode和equals
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/60%E8%AF%AD%E8%A8%80/JAVA/java%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/">
+                     
+										    java基础笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										70算法
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/70%E7%AE%97%E6%B3%95/%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E6%95%B0/">
+                     
+										    倒数第k个数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/70%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                     
+										    数组和字符串
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/70%E7%AE%97%E6%B3%95/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">
+                     
+										    树的遍历
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										80操作系统
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/80%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AF%BC%E8%AE%BA/">
+                     
+										    操作系统导论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/80%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%9C%AF%E8%AF%AD%E8%A1%A8/">
+                     
+										    术语表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										90杂项
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/win%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6/">
+                     
+										    win链接文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E2%80%9C%E4%BA%89%E5%BD%93%E5%B0%91%E6%95%B0%E8%80%85%E2%80%9D%E5%8D%9A%E5%BC%88/">
+                     
+										    “争当少数者”博弈
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E2%80%9C%E5%9B%9A%E5%BE%92%E5%9B%B0%E5%A2%83%E2%80%9D%E5%8D%9A%E5%BC%88/">
+                     
+										    “囚徒困境”博弈
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E2%80%9C%E8%90%A5%E5%A0%86%E2%80%9D%E5%8D%9A%E5%BC%88/">
+                     
+										    “营堆”博弈
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E5%AD%A6%E6%9C%AF%E6%8A%A5%E5%91%8APPT%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-hxt/">
+                     
+										    学术报告PPT设计指南-hxt
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E5%BF%AB%E9%80%9F%E6%8E%8C%E6%8F%A1%E4%B8%80%E9%97%A8%E6%8A%80%E6%9C%AF/">
+                     
+										    快速掌握一门技术
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E7%AE%80%E5%8E%86/">
+                     
+										    简历
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E8%8A%AF%E7%89%87%E5%8E%9F%E5%8E%82%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
+                     
+										    芯片原厂软件开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E9%AB%98%E6%95%B0/">
+                     
+										    高数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	全局变量跳变
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>kong lei</span>
+	<span>2024-05-31 15:16:37</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>在使用trace工具时，可以观测一个变量的实时变化（基于固定时间长度采样），采样完，会使用折线绘出变量的变化情况，可以看见明显的跳变</p>
+<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>在使用ETAS的AUTOSAR OS时，全局变量会随机跳变到很奇怪的值（有时候甚至是一个变量的地址）</p>
+<p>在不使用操作系统时，不会跳变</p>
+<p>大约0.5s~1.5s会遇到一次篡改，频率不固定</p>
+<h1 id="排查思路和过程"><a href="#排查思路和过程" class="headerlink" title="排查思路和过程"></a>排查思路和过程</h1><ol>
+<li>首先考虑是否被其他函数意外篡改掉<blockquote>
+<p>通过全局搜索变量有没有被其他函数的语句写入，将变量改变为固定的输入值（使用常量），变量仍然被篡改，同时也排除了cache的影响</p>
+</blockquote>
+</li>
+<li>是否被其他函数的内存越界篡改到<blockquote>
+<p>可以通过修改链接脚本排查，使变量被分配到其他的地方，最好是没有被使用到的ram区域（DTCM、ITCM等），隔离其他变量，以免误操作导致篡改（将变量放入DTCM后数据仍然跳变，然后将相关函数也加入DTCM中运行，未发现跳变，但是在更长时间的观测中发现了跳变，可以发现频率降低了许多，不过使用TCM并不会改变运行流程，可以排除是内存越界导致的篡改）</p>
+</blockquote>
+</li>
+<li>由于环境变化，增加os导致问题，非AUTOSAR环境使用FTM的定时中断进行任务的切换，AUTOSAR OS下，中断由OS接管控制，怀疑是否是task切换的现场保护导致的变量篡改<blockquote>
+<p>由于无法拿到完整的工程代码进行分析，就算有技术负责人进行远程的支持，排查效果也不好，只能到客户现场进行调试来定位bug，粗略查看OS的调度方法，没有大体上的问题，但是os进行task jump前确实修改了一些内核的参数（有伏笔）</p>
+</blockquote>
+</li>
+<li>ETAS的AUTOSAR OS比较繁杂，无法进行全面的分析，使用打算比较工程的配置项来进行排查，降低难度<blockquote>
+<p>MCU的系统相比于那些能跑操作系统的CPU（有MMU单元）要简单许多，所有行为都是比较直观的，可以看见绝大部分状态变更。</p>
+</blockquote>
+</li>
+<li>但是对比过来，带OS和不带OS的MCAL环境配置是一模一样的，所以问题可能不在MCAL上，有可能是ETAS的配置问题<blockquote>
+<p>尝试联系ETAS联合排查问题，但是对方不进行配合</p>
+</blockquote>
+</li>
+<li>很容易发现两种环境下，在进行任务跳转前CPU的环境是不一样的，不带OS的工程只是单纯的在中断中进行了函数跳转，但是在ETAS的OS中，跳转前设置了运行环境<blockquote>
+<p>经过了艰难的排查，最后突然有了灵感，排除掉意外的修改，那么只可能是task切换时的上下文保护环境出了问题（因为之前发现跳变的值有时候可能是一个变量的地址，这个任务也涉及了浮点数运算，还有一种情况下是，如果编译器对数据拷贝过程进行优化也可能使用到浮点寄存器，因为浮点寄存器一次可以搬运64bit的值，因为自己写过简易的RTOS，RTOS在是否使用FPU时是需要特别进行适配的，因为涉及的上下文的保护，浮点寄存器的压栈）</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>工程中首先是底层驱动的初始化，然后OS才会进行自己的初始化，跟踪OS的初始化发现，它设置了中断时浮点寄存器不进行自动压栈（M7核默认是使能FPU时，中断发生会自动压栈前16个浮点寄存器）</p>
+<p>由于OS关闭了硬件的浮点寄存器保护，并且没有主动保护浮点寄存器，所以浮点寄存器的值在中断发生后可能会被破坏（1.这里可以发现跳变值可能是变量地址是合理的，FPU的浮点寄存器被用来加载某个地址的值，然后覆盖了之前FPU的浮点寄存器值。2.相关内容加入DTCM后篡改频率降低，因为DTCM的取指是0等待的，但是flash取指需要等待，这也是M7核运行速度的一个瓶颈所在，所以函数执行非常快，减小了被打断的可能性。）</p>
+<p>ETAS的配置中没有使能FPU，所以覆盖了MCAL配置的使能FPU配置，但是编译是根据MCAL提供的配置，链接也是使用MCAL包提供的链接脚本，所有代码的转换都是以开启浮点单元为前提进行的，所以产生了这个奇怪的问题</p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/Cortex-M7%E5%9C%A8%E5%88%86%E7%BB%84%E4%BC%98%E5%85%88%E7%BA%A7%E9%85%8D%E7%BD%AE%E4%B8%BA4%E6%97%B6svc%E8%A7%A6%E5%8F%91hardfault/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Cortex-M7在分组优先级配置为4时svc触发hardfault
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/">
+                
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">kong lei</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
