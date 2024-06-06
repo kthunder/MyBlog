@@ -614,28 +614,6 @@
 							</ul>
 			
 							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
-										MCAL
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/MCAL/WDG/">
-                     
-										    WDG
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
 								<li class="file">
 									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Map%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">
                      
@@ -776,17 +754,6 @@
 			
 								</li>
 								
-							</ul>
-			
-							<ul>
-								<li class="file">
-									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
-                     
-										    嵌入式开发
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
 							<ul>
@@ -1213,7 +1180,7 @@
 <li>password，check和modify访问支持动态pattern和静态pattern方式;</li>
 <li>支持在WDT模式下输出唤醒中断信号;</li>
 </ul>
-<h1 id="功能描述"><a href="#功能描述" class="headerlink" title="功能描述"></a>功能描述</h1><h2 id="EndIinit-Watchdog-Timer"><a href="#EndIinit-Watchdog-Timer" class="headerlink" title="EndIinit Watchdog Timer"></a>EndIinit Watchdog Timer</h2><h3 id="endinit-watchdog-工作流程"><a href="#endinit-watchdog-工作流程" class="headerlink" title="endinit watchdog 工作流程"></a>endinit watchdog 工作流程</h3><p><img src="/../../../imgs/ENDINIT.md/img-20240411170912.png" alt="Img"></p>
+<h1 id="功能描述"><a href="#功能描述" class="headerlink" title="功能描述"></a>功能描述</h1><h2 id="EndIinit-Watchdog-Timer"><a href="#EndIinit-Watchdog-Timer" class="headerlink" title="EndIinit Watchdog Timer"></a>EndIinit Watchdog Timer</h2><h3 id="endinit-watchdog-工作流程"><a href="#endinit-watchdog-工作流程" class="headerlink" title="endinit watchdog 工作流程"></a>endinit watchdog 工作流程</h3><p><img src="https://raw.githubusercontent.com/kthunder/BlogImg/main/img20240606133036.png" alt="img"></p>
 <p>复位后WDG默认关闭，发起password access激活</p>
 <h3 id="配置被关闭endinit保护的寄存器的操作流程"><a href="#配置被关闭endinit保护的寄存器的操作流程" class="headerlink" title="配置被关闭endinit保护的寄存器的操作流程"></a>配置被关闭endinit保护的寄存器的操作流程</h3><ol>
 <li>通过password access，超时模式开始工作</li>
@@ -1221,15 +1188,14 @@
 <li>配置被endinit保护的寄存器</li>
 <li>完成配置后通过modify access，配置配置endinit为1，开启endinit，此时WDG自动退出超时模式（配置配置endinit为0的持续时间由WDTSCON1配置，如果超时后仍没有打开endinit，将输出报警，endinit的超时模式在password access激活后无法禁用）</li>
 </ol>
-<h3 id="watchdog-mode-功能"><a href="#watchdog-mode-功能" class="headerlink" title="watchdog mode 功能:"></a>watchdog mode 功能:</h3><p>endinit watchdog 可以用做 watchdog 功能，可以产生定时唤醒中断和输出 watchdog 超时报警，endinit 从 timeout mode 退出后会自动进入 watchdog mode,watchdog mode 的计数相关参数可以配置由 endinit 保护的 WDTSCON1 寄存器设置，也可以设置 WDTSCON1.DS&#x3D;1，禁用 endinit 的watchdog 功能。<br>在 endinit watchdog 有效时，可以通过 password access 和 modify access 组合喂狗，也可以通过 check access 修改喂狗的密码。endinit watchdog 在Lck后，如果 pas&#x3D;1，则需要使用动态密码喂狗，且每次 password access和 check access 均会修改密码，如果 pas&#x3D;0，则使用 pw 中静态密码喂狗。<br>动态密码修改规则遵循如下 LFSR序列规则变化:</p>
-<p><img src="/../../../imgs/ENDINIT.md/img-20240411151431.png" alt="Img"></p>
+<h3 id="watchdog-mode-功能"><a href="#watchdog-mode-功能" class="headerlink" title="watchdog mode 功能:"></a>watchdog mode 功能:</h3><p>endinit watchdog 可以用做 watchdog 功能，可以产生定时唤醒中断和输出 watchdog 超时报警，endinit 从 timeout mode 退出后会自动进入 watchdog mode,watchdog mode 的计数相关参数可以配置由 endinit 保护的 WDTSCON1 寄存器设置，也可以设置 WDTSCON1.DS&#x3D;1，禁用 endinit 的watchdog 功能。<br>在 endinit watchdog 有效时，可以通过 password access 和 modify access 组合喂狗，也可以通过 check access 修改喂狗的密码。endinit watchdog 在Lck后，如果 pas&#x3D;1，则需要使用动态密码喂狗，且每次 password access和 check access 均会修改密码，如果 pas&#x3D;0，则使用 pw 中静态密码喂狗。<br>动态密码修改规则遵循如下 LFSR序列规则变化:<br><img src="https://raw.githubusercontent.com/kthunder/BlogImg/main/img20240606133158.png" alt="20240606133158"></p>
 <h3 id="watchdog-mode-低功耗周期唤醒功能"><a href="#watchdog-mode-低功耗周期唤醒功能" class="headerlink" title="watchdog mode 低功耗周期唤醒功能"></a>watchdog mode 低功耗周期唤醒功能</h3><p>在 watchdog mode 下，endinit watchdog 内部计数器在计数到 0x8000 时会发起中断给 cpu，该功能默认不使能，可以通过配置 WDTSCON1.IREN 打开</p>
-<h2 id="EndIinit-Timer"><a href="#EndIinit-Timer" class="headerlink" title="EndIinit Timer"></a>EndIinit Timer</h2><p>为了防止 endinit watchdog 寄存器保护功能异常导致寄存器无法配置的单点失效情况，内部设置了endinit timer，该模块不支持 watchdog mode，仅用于保护寄存器访问，寄存器保护和 endinitwatchdog 类似，会输出endinit用于控制寄存器的访问，如下图:<br><img src="/../../../imgs/ENDINIT.md/img-20240411170432.png" alt="Img"><br>endinit watchdog 和 endinit timer 任意一个 endinit 关闭时，均可以配置寄存器，同时 debug 可以配置关闭 endinit 功能。<br>复位后 endinit timer是 disabled 的，在第一次 password access 后激活，激活后不可以关闭。</p>
+<h2 id="EndIinit-Timer"><a href="#EndIinit-Timer" class="headerlink" title="EndIinit Timer"></a>EndIinit Timer</h2><p>为了防止 endinit watchdog 寄存器保护功能异常导致寄存器无法配置的单点失效情况，内部设置了endinit timer，该模块不支持 watchdog mode，仅用于保护寄存器访问，寄存器保护和 endinitwatchdog 类似，会输出endinit用于控制寄存器的访问，如下图:<br><img src="https://raw.githubusercontent.com/kthunder/BlogImg/main/img20240606133211.png" alt="20240606133211"><br>endinit watchdog 和 endinit timer 任意一个 endinit 关闭时，均可以配置寄存器，同时 debug 可以配置关闭 endinit 功能。<br>复位后 endinit timer是 disabled 的，在第一次 password access 后激活，激活后不可以关闭。</p>
 <h2 id="操作模式"><a href="#操作模式" class="headerlink" title="操作模式"></a>操作模式</h2><p>endinitwatchdog有三种操作模式</p>
 <blockquote>
 <p>只有当LCK位置起时，才能进行password 或者 check access</p>
 </blockquote>
-<p><img src="/../../../imgs/ENDINIT.md/img-20240411201749.png" alt="Img"></p>
+<p><img src="https://raw.githubusercontent.com/kthunder/BlogImg/main/img20240606133227.png" alt="20240606133227"></p>
 <ul>
 <li>password access</li>
 </ul>
@@ -1701,16 +1667,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/FLASH/">
+              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/CAN/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  FLASH
+                  CAN
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/CAN/">
-                CAN
+              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Map%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">
+                Map文件解析
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
