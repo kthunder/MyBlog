@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		ENDINIT | 
+		openOCD_build | 
 	 
 	kong lei&#39;s Blog
 	</title>
@@ -625,7 +625,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/06/13/50%E5%B5%8C%E5%85%A5%E5%BC%8F/openOCD_build/">
                      
 										    openOCD_build
@@ -665,7 +665,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/ENDINIT/">
                      
 										    ENDINIT
@@ -1152,7 +1152,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	ENDINIT
+	openOCD_build
 </h1>
 
 <!-- meta -->
@@ -1160,7 +1160,7 @@
 	
 
 	<span>kong lei</span>
-	<span>2024-05-31 15:16:37</span>
+	<span>2024-06-13 10:33:18</span>
 
   <div id="article-categories">
     
@@ -1178,498 +1178,24 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1 id="ENDINIT"><a href="#ENDINIT" class="headerlink" title="ENDINIT"></a>ENDINIT</h1><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>SCU内置endinit watchdog，用于控制系统寄存器访问保护，被endinit保护的寄存器写操作需要先开启endinit watchdog，并在watchdog设定的时间范围内完成配置，之后重新锁定endini，否则会输出报警。（endinit清除需要一定时间，建议在清除操作后进行一次回读，再访问受保护的寄存器）</p>
-<h1 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h1><p>endinit包含如下特性:</p>
-<ul>
-<li>在第一次发起passwordaccess后开始工作;</li>
-<li>WDT功能可以禁止，但timeout功能无法禁止;</li>
-<li>支持otp配置禁止endinit功能;</li>
-<li>支持debug配置禁止endinit功能;</li>
-<li>在password或者modify访问错误时报警;</li>
-<li>在喂狗密码错误时产生报警;</li>
-<li>喂狗操作支持静态密码和动态密码两种模式;</li>
-<li>password，check和modify访问支持动态pattern和静态pattern方式;</li>
-<li>支持在WDT模式下输出唤醒中断信号;</li>
+	<h1 id="在windows上编译openOCD"><a href="#在windows上编译openOCD" class="headerlink" title="在windows上编译openOCD"></a>在windows上编译openOCD</h1><h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><p>因为openOCD是一个在Linux上开发的项目，所以编译环境依赖Linux，在windows上MSYS和MinGW可以提供模拟的Linux环境，这里我们安装MSYS</p>
+<h1 id="安装依赖工具"><a href="#安装依赖工具" class="headerlink" title="安装依赖工具"></a>安装依赖工具</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pacman -S make</span><br><span class="line">pacman -S autoconf</span><br><span class="line">pacman -S pkg-config</span><br><span class="line">pacman -S automake</span><br><span class="line">pacman -S texinfo</span><br><span class="line">pacman -S mingw-w64</span><br><span class="line">pacman -S libtool</span><br></pre></td></tr></table></figure>
+
+<h1 id="准备依赖库"><a href="#准备依赖库" class="headerlink" title="准备依赖库"></a>准备依赖库</h1><p>要驱动jlink、dap-link等，需要特定USB驱动，由于要编译成win上使用的动态库，所以我们下载源码进行交叉编译，编译完成后导出库的路径到环境变量，提供给openOCD编译时使用</p>
+<h2 id="交叉编译libusb"><a href="#交叉编译libusb" class="headerlink" title="交叉编译libusb"></a>交叉编译libusb</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">./bootstrap</span><br><span class="line"></span><br><span class="line">./configure --prefix=/C/Users/Administrator/Desktop/build/app/libusb --host=i686-w64-mingw32</span><br><span class="line"></span><br><span class="line">make -j12</span><br><span class="line"></span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LIBUSB1_CFLAGS=<span class="string">&quot;<span class="variable">$LIBUSB1_CFLAGS</span> -I/C/Users/Administrator/Desktop/build/app/libusb/include/libusb-1.0&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LIBUSB1_LIBS=<span class="string">&quot;<span class="variable">$LIBUSB1_LIBS</span> -L/C/Users/Administrator/Desktop/build/app/libusb/lib -lusb-1.0&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="交叉编译hidapi"><a href="#交叉编译hidapi" class="headerlink" title="交叉编译hidapi"></a>交叉编译hidapi</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">./bootstrap</span><br><span class="line"></span><br><span class="line">./configure --prefix=/C/Users/Administrator/Desktop/build/app/hidapi --host=i686-w64-mingw32</span><br><span class="line"></span><br><span class="line">make -j12</span><br><span class="line"></span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HIDAPI_CFLAGS=<span class="string">&quot;<span class="variable">$HIDAPI_CFLAGS</span> -I/C/Users/Administrator/Desktop/build/app/hidapi/include/hidapi&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HIDAPI_LIBS=<span class="string">&quot;<span class="variable">$HIDAPI_LIBS</span> -L/C/Users/Administrator/Desktop/build/app/hidapi/lib -lhidapi&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="、、、"><a href="#、、、" class="headerlink" title="、、、"></a>、、、</h2><p>其他依赖库编译同理</p>
+<h1 id="编译openOCD"><a href="#编译openOCD" class="headerlink" title="编译openOCD"></a>编译openOCD</h1><p>使用同样方法编译openOCD</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">./bootstrap</span><br><span class="line"></span><br><span class="line">./configure --disable-stlink --disable-jlink --disable-cmsis-dap --enable-cmsis-dap-v2 --prefix=/c/Users/Administrator/Desktop/build/ocd --host=i686-w64-</span><br><span class="line">mingw32</span><br><span class="line"></span><br><span class="line">make -j12 CFLAGS+=<span class="string">&quot;-Wno-error=calloc-transposed-args&quot;</span></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用项目中提供的一键编译脚本编译openOCD"><a href="#使用项目中提供的一键编译脚本编译openOCD" class="headerlink" title="使用项目中提供的一键编译脚本编译openOCD"></a>使用项目中提供的一键编译脚本编译openOCD</h1><p>位于’openocd\contrib\corss-build.sh’</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># All the paths must not contain any spaces.</span></span><br><span class="line"><span class="comment"># Usage:</span></span><br><span class="line"><span class="built_in">cd</span> /C/Users/Administrator/Desktop/build</span><br><span class="line"><span class="built_in">export</span> MAKE_JOBS=12</span><br><span class="line"><span class="built_in">export</span> LIBUSB1_SRC=/C/Users/Administrator/Desktop/build/libusb</span><br><span class="line"><span class="built_in">export</span> HIDAPI_SRC=/C/Users/Administrator/Desktop/build/hidapi</span><br><span class="line"><span class="built_in">export</span> OPENOCD_CONFIG=<span class="string">&quot;--disable-stlink --disable-jlink --enable-cmsis-dap --enable-cmsis-dap-v2&quot;</span></span><br><span class="line"><span class="comment"># For static linking, a workaround is to</span></span><br><span class="line"><span class="comment"># export LIBUSB1_CONFIG=&quot;--enable-static --disable-shared&quot;</span></span><br><span class="line"><span class="built_in">cd</span> /C/Users/Administrator/Desktop/build</span><br><span class="line">/C/Users/Administrator/Desktop/build/openocd/contrib/cross-build.sh i686-w64-mingw32</span><br></pre></td></tr></table></figure>
+
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
+<li>编译完成后，需要将libusb等的动态链接库(dll)文件手动移动到编译出的openocd.exe文件目录下，否则无法执行</li>
 </ul>
-<h1 id="功能描述"><a href="#功能描述" class="headerlink" title="功能描述"></a>功能描述</h1><h2 id="EndIinit-Watchdog-Timer"><a href="#EndIinit-Watchdog-Timer" class="headerlink" title="EndIinit Watchdog Timer"></a>EndIinit Watchdog Timer</h2><h3 id="endinit-watchdog-工作流程"><a href="#endinit-watchdog-工作流程" class="headerlink" title="endinit watchdog 工作流程"></a>endinit watchdog 工作流程</h3><p><img src="https://raw.githubusercontent.com/kthunder/BlogImg/main/img20240606133036.png" alt="img"></p>
-<p>复位后WDG默认关闭，发起password access激活</p>
-<h3 id="配置被关闭endinit保护的寄存器的操作流程"><a href="#配置被关闭endinit保护的寄存器的操作流程" class="headerlink" title="配置被关闭endinit保护的寄存器的操作流程"></a>配置被关闭endinit保护的寄存器的操作流程</h3><ol>
-<li>通过password access，超时模式开始工作</li>
-<li>modify access, 配置endinit为0，关闭endinit</li>
-<li>配置被endinit保护的寄存器</li>
-<li>完成配置后通过modify access，配置配置endinit为1，开启endinit，此时WDG自动退出超时模式（配置配置endinit为0的持续时间由WDTSCON1配置，如果超时后仍没有打开endinit，将输出报警，endinit的超时模式在password access激活后无法禁用）</li>
-</ol>
-<h3 id="watchdog-mode-功能"><a href="#watchdog-mode-功能" class="headerlink" title="watchdog mode 功能:"></a>watchdog mode 功能:</h3><p>endinit watchdog 可以用做 watchdog 功能，可以产生定时唤醒中断和输出 watchdog 超时报警，endinit 从 timeout mode 退出后会自动进入 watchdog mode,watchdog mode 的计数相关参数可以配置由 endinit 保护的 WDTSCON1 寄存器设置，也可以设置 WDTSCON1.DS&#x3D;1，禁用 endinit 的watchdog 功能。<br>在 endinit watchdog 有效时，可以通过 password access 和 modify access 组合喂狗，也可以通过 check access 修改喂狗的密码。endinit watchdog 在Lck后，如果 pas&#x3D;1，则需要使用动态密码喂狗，且每次 password access和 check access 均会修改密码，如果 pas&#x3D;0，则使用 pw 中静态密码喂狗。<br>动态密码修改规则遵循如下 LFSR序列规则变化:<br><img src="https://raw.githubusercontent.com/kthunder/BlogImg/main/img20240606133158.png" alt="20240606133158"></p>
-<h3 id="watchdog-mode-低功耗周期唤醒功能"><a href="#watchdog-mode-低功耗周期唤醒功能" class="headerlink" title="watchdog mode 低功耗周期唤醒功能"></a>watchdog mode 低功耗周期唤醒功能</h3><p>在 watchdog mode 下，endinit watchdog 内部计数器在计数到 0x8000 时会发起中断给 cpu，该功能默认不使能，可以通过配置 WDTSCON1.IREN 打开</p>
-<h2 id="EndIinit-Timer"><a href="#EndIinit-Timer" class="headerlink" title="EndIinit Timer"></a>EndIinit Timer</h2><p>为了防止 endinit watchdog 寄存器保护功能异常导致寄存器无法配置的单点失效情况，内部设置了endinit timer，该模块不支持 watchdog mode，仅用于保护寄存器访问，寄存器保护和 endinitwatchdog 类似，会输出endinit用于控制寄存器的访问，如下图:<br><img src="https://raw.githubusercontent.com/kthunder/BlogImg/main/img20240606133211.png" alt="20240606133211"><br>endinit watchdog 和 endinit timer 任意一个 endinit 关闭时，均可以配置寄存器，同时 debug 可以配置关闭 endinit 功能。<br>复位后 endinit timer是 disabled 的，在第一次 password access 后激活，激活后不可以关闭。</p>
-<h2 id="操作模式"><a href="#操作模式" class="headerlink" title="操作模式"></a>操作模式</h2><p>endinitwatchdog有三种操作模式</p>
-<blockquote>
-<p>只有当LCK位置起时，才能进行password 或者 check access</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/kthunder/BlogImg/main/img20240606133227.png" alt="20240606133227"></p>
-<ul>
-<li>password access</li>
-</ul>
-<p>为了保证正确的服务顺序，只有LCK位置起时才允许密码访问，密码访问会解锁LCK位，之后可以进行修改访问，以对endinit进行配置，若访问错误则立即产生告警</p>
-<table>
-<thead>
-<tr>
-<th>bit位</th>
-<th>要求的值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1:0</td>
-<td>固定值，必须写入2`b01</td>
-</tr>
-<tr>
-<td>15:2</td>
-<td>如果PAS&#x3D;0<br>WDTSCON0.PW[7:2]需要写入从WDTSCON0.PW[7:2]读出数据的翻转值WDTSCON0.PW[15:8]必须写入从WDTSCON0.PW[15:8]读取的数据<br>如果PAS&#x3D;1<br>必须写入下一个密码序列</td>
-</tr>
-<tr>
-<td>31:16</td>
-<td>如果TCS&#x3D;0<br>必须写入定时器重载值WDTxCON0.REL<br>如果TCS&#x3D;1<br>需要写入当前计数值(WDTxSR.TIM)的估计值，误差需要在±容忍值（WDTxSR.TCT）以内</td>
-</tr>
-</tbody></table>
-<ul>
-<li>check access</li>
-</ul>
-<p>只有LCK位置起时才允许检查访问</p>
-<table>
-<thead>
-<tr>
-<th>bit位</th>
-<th>要求的值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1:0</td>
-<td>固定值，必须写入2`b11</td>
-</tr>
-<tr>
-<td>15:2</td>
-<td>如果PAS&#x3D;0<br>WDTSCON0.PW[7:2]需要写入从WDTSCON0.PW[7:2]读出数据的翻转值<br>WDTSCON0.PW[15:8]必须写入从WDTSCON0.PW[15:8]读取的数据<br>如果PAS&#x3D;&#x3D;1<br>必须写入下一个密码序列</td>
-</tr>
-<tr>
-<td>31:16</td>
-<td>如果TCS&#x3D;0<br>必须写入定时器重载值WDTxCON0.REL<br>如果TCS&#x3D;&#x3D;1<br>需要写入当前计数值(WDTxSR.TIM)的估计值，误差需要在±容忍值（WDTxSR.TCT）以内</td>
-</tr>
-</tbody></table>
-<ul>
-<li>modify access</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>bit位</th>
-<th>要求的值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>用户定义，期望设置的WDTSCON0.ENDINIT的值</td>
-</tr>
-<tr>
-<td>1</td>
-<td>固定值1</td>
-</tr>
-<tr>
-<td>15:2</td>
-<td>用户定义，期望设置的WDTSCON0.PW的值</td>
-</tr>
-<tr>
-<td>31:16</td>
-<td>用户定义，期望设置的WDTxCON0.REL的值</td>
-</tr>
-</tbody></table>
-<h2 id="访问受Endinit保护的寄存器"><a href="#访问受Endinit保护的寄存器" class="headerlink" title="访问受Endinit保护的寄存器"></a>访问受Endinit保护的寄存器</h2><p>如果在运行期间需要对受 Endinit 保护的寄存器进行写入访问，则可以在有限的时间内临时重新启用写入访问。 提供了两种选择：</p>
-<ol>
-<li><p>通过WDT启用对受ENDINIT保护的寄存器的访问</p>
-<ol>
-<li>使用有效的密码访问解锁WDTxCON0</li>
-<li>使用有效的修改访问清除ENDINIT</li>
-<li>访问被保护的寄存器</li>
-</ol>
-<p> 注意：当WDTxCON0解锁时，WDT自动切换到超时模式，因此访问窗口有时间限制，超时模式在重新设置ENDINIT后终止。</p>
-</li>
-<li><p>不通过WDT对ENDINIT保护的寄存器的访问</p>
-<p> 直接禁用WDT(WDTxSR.DS&#x3D;1)(不建议)</p>
-</li>
-</ol>
-<h1 id="寄存器描述"><a href="#寄存器描述" class="headerlink" title="寄存器描述"></a>寄存器描述</h1><h2 id="EndIinit-Watchdog-Timer-1"><a href="#EndIinit-Watchdog-Timer-1" class="headerlink" title="EndIinit Watchdog Timer"></a>EndIinit Watchdog Timer</h2><h3 id="WDTSCON0"><a href="#WDTSCON0" class="headerlink" title="WDTSCON0"></a>WDTSCON0</h3><table>
-<thead>
-<tr>
-<th>Bitfield</th>
-<th>Name</th>
-<th>ResetVal</th>
-<th>Access</th>
-<th>Desc</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>31:16</td>
-<td>REL</td>
-<td>0xFFFC</td>
-<td>RW</td>
-<td>WDT的复位值（同时也是时间检查值）<br>该值可以在一次WDTxCON0的modify access中被修改<br>如果WDT开启，并且在NormalTimerMode，在喂狗后，从该值持续递减<br>在password access或者check access期间，此位域被用于额外的检查，在检查期间写入不会影响复位值<br>如果WDTxSR.TCS&#x3D;0，在password access或者check access时，该位域必须写入当前值<br>如果WDTxSR.TCS&#x3D;1，在password access或者check access时，该位域必须写入WDTxSR.TIM的值，允许误差在一定范围内</td>
-</tr>
-<tr>
-<td>15:2</td>
-<td>PW</td>
-<td>60</td>
-<td>RW</td>
-<td>可用户自定义的密码以访问WDTxCON0<br>当modify access时此位域必须写入初始密码<br>读取该位域会返回初始密码（TODO）</td>
-</tr>
-<tr>
-<td>1</td>
-<td>LCK</td>
-<td>1</td>
-<td>RW</td>
-<td>控制访问WDTSCON0的锁定位<br>由硬件控制<br>当WDTSSR.US为0时，正确的password access会清除锁定位，当一次正确的modify accessWDTSCON0后，锁定位会自动置起<br>在写入WDTSCON0期间，对该位的写入仅用于密码保护机制，不会实际储存<br>该位一定会在password access后清除，在modify access后置起<br>check access不会清除此位<br>0表示不上锁，1表示上锁</td>
-</tr>
-<tr>
-<td>0</td>
-<td>ENDINIT</td>
-<td>0</td>
-<td>RW</td>
-<td>endinit控制位<br>当进行密码或者check access时，该位只能写1（即使这次写入仅仅用于密码保护机制并且不会保存），在modify access时该位只能写入需要的值<br>该位用于访问带E的寄存器，但是当WDT失效时，候补寄存器SEICON0.ENDINIT可以达到相同效果<br>0：允许访问（当应用复位时）<br>1：不允许访问</td>
-</tr>
-</tbody></table>
-<h3 id="WDTSCON1"><a href="#WDTSCON1" class="headerlink" title="WDTSCON1"></a>WDTSCON1</h3><table>
-<thead>
-<tr>
-<th>Bitfield</th>
-<th>Name</th>
-<th>ResetVal</th>
-<th>Access</th>
-<th>Desc</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>31:16</td>
-<td>保留</td>
-<td>0</td>
-<td>RO</td>
-<td>读返回0需要写0</td>
-</tr>
-<tr>
-<td>15:9</td>
-<td>TCTR</td>
-<td>0</td>
-<td>RW</td>
-<td>计时器检查容差请求<br>只能在endinit关闭时修改<br>WDTxSR.TCT会更新当ENDINIT开启<br>只要ENDINIT、关闭，WDTxSR.TCT控制计时器检查的容差<br>当endinit重新启动，WDTxSR.TCT更新为TCTR的状态</td>
-</tr>
-<tr>
-<td>8</td>
-<td>TCR</td>
-<td>0</td>
-<td>RW</td>
-<td>计数器检查请求位<br>WDTxSR.TCS更新当ENDINIT重新开启<br>当ENDINIT关闭，WDTxSR.TCS控制计数器检查是否开启当ENDINIT重新开启，WDTxSR.TCS更新为TCR的状态<br>0：只检查REL被写入存在的REL值在modify access或者check access<br>1：检查REL被写入的值为TIM值（允许容差范围内）在modify access或者check access</td>
-</tr>
-<tr>
-<td>7</td>
-<td>PAR</td>
-<td>0</td>
-<td>RW</td>
-<td>密码自动序列请求位<br>可以被修改当ENDINIT关闭<br>只要ENDINIT关闭，WSTxSR.PAS控制密码序列，WSTxSR.PAS会更新为PAR的状态<br>0：不自动更新密码在每次修改或者check access之后<br>1：自动更新密码在每次修改或者check access之后</td>
-</tr>
-<tr>
-<td>6</td>
-<td>IREN</td>
-<td>0</td>
-<td>RW</td>
-<td>中断开启控制位<br>0：关闭中断<br>1：开启中断当，WDTx计数器到0x8000</td>
-</tr>
-<tr>
-<td>5</td>
-<td>IR1</td>
-<td>0</td>
-<td>RW</td>
-<td>输入频率请求控制位<br>位IR0和IR1应该一起被编程来探测WDTx计数器的频率<br>只要ENDINIT关闭，WSTxSR.IS0和WSTxSR.IS1控制当前输入频率对WDT，当ENDINIT开启，WSTxSR.IS0和WSTxSR.IS1更新为IR0和IR1<br>0<br>IR0&#x3D;0fSPB&#x2F;16384<br>IR0&#x3D;1fSPB&#x2F;256<br>1<br>IR0&#x3D;0fSPB&#x2F;64<br>IR0&#x3D;1保留</td>
-</tr>
-<tr>
-<td>4</td>
-<td>保留</td>
-<td>0</td>
-<td>RO</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>DR</td>
-<td>0</td>
-<td>RW</td>
-<td>关闭请求控制位<br>0请求开启WDTx<br>1请求关闭WDTx</td>
-</tr>
-<tr>
-<td>2</td>
-<td>IR0</td>
-<td>0</td>
-<td>RW</td>
-<td></td>
-</tr>
-<tr>
-<td>1</td>
-<td>保留</td>
-<td>0</td>
-<td>RO</td>
-<td></td>
-</tr>
-<tr>
-<td>0</td>
-<td>CLRIRF</td>
-<td>0</td>
-<td>RW</td>
-<td>重启内部复位标志</td>
-</tr>
-</tbody></table>
-<h3 id="WDTSSR"><a href="#WDTSSR" class="headerlink" title="WDTSSR"></a>WDTSSR</h3><table>
-<thead>
-<tr>
-<th>Bitfield</th>
-<th>Name</th>
-<th>ResetVal</th>
-<th>Access</th>
-<th>Desc</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>31:16</td>
-<td>TIM</td>
-<td>65532</td>
-<td>RO</td>
-<td>定时器值<br>反应WDTx当前计数值</td>
-</tr>
-<tr>
-<td>15:9</td>
-<td>TCT</td>
-<td>0</td>
-<td>RO</td>
-<td>定时器检查容差值<br>此位域指示password access或者check access的容差值，当WDTxCON0.ENDINIT在一次正确的modify access被写1时，此位域会被WDTxCON1.TCTR的值更新</td>
-</tr>
-<tr>
-<td>8</td>
-<td>TCS</td>
-<td>0</td>
-<td>RO</td>
-<td>定时器检查状态标识<br>当WDTxCON0.ENDINIT在一次正确的modify access被写1时，此位域会被WDTxCON1.TCR的值更新<br>0：当修改或者check access时REL需要写入正确的REL值<br>1：当修改或者check access时REL需要写入当前TIM值允许误差范围±TCT</td>
-</tr>
-<tr>
-<td>7</td>
-<td>PAS</td>
-<td>0</td>
-<td>RO</td>
-<td>自动密码序列状态标志位<br>当WDTxCON0.ENDINIT在一次正确的modify access被写1时，此位域会被WDTxCON1.PAR的值更新<br>0：在每次修改或者check access后不修改密码<br>1：在每次修改或者check access后自动修改密码</td>
-</tr>
-<tr>
-<td>6</td>
-<td>IRS</td>
-<td>0</td>
-<td>RO</td>
-<td>中断状态标志位<br>当WDTxCON0.IREN置1并且WDTx的计数值到达0x8000时此位置1<br>当WDTxCON0.ENDINIT在一次正确的modify access被写1时，此位清除</td>
-</tr>
-<tr>
-<td>5</td>
-<td>IS1</td>
-<td>0</td>
-<td>RO</td>
-<td>看门狗输入时钟状态<br>IS0和IS1应该被一起修改，它们用来指示当前WDTx的时钟频率（规则见上文）<br>当WDTxCON0.ENDINIT在一次正确的modify access被写1时，这两个位会被WDTxCON0.IR0和WDTxCON0.IR1修改</td>
-</tr>
-<tr>
-<td>4</td>
-<td>TO</td>
-<td>1</td>
-<td>RO</td>
-<td>看门狗超时模式标志位<br>当进入超时模式时此位被置起，当退出超时模式时，此位被清除<br>0：看门狗不在超时模式下<br>1：看门狗在超时模式下</td>
-</tr>
-<tr>
-<td>3</td>
-<td>DS</td>
-<td>0</td>
-<td>RO</td>
-<td>看门狗开启&#x2F;关闭状态标志位<br>当WDTxCON0.ENDINIT在一次正确的modify access被写1时，此位被更新为WDTxCON1.DR的值<br>当进入超时模式时，此位被清除<br>0：WDTx开启<br>1：WDTx关闭</td>
-</tr>
-<tr>
-<td>2</td>
-<td>IS0</td>
-<td>0</td>
-<td>RO</td>
-<td>看门狗输入时钟状态，见IS1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>OE</td>
-<td>0</td>
-<td>RO</td>
-<td>看门狗溢出错误状态位<br>当WDTx从0xFFFFH计数到0x00000时，此位置起<br>当WDTxCON0.ENDINIT在一次正确的modify access被写1时此位清除<br>0：无看门狗溢出错误<br>1：一次看门狗溢出错误发生</td>
-</tr>
-<tr>
-<td>0</td>
-<td>AE</td>
-<td>0</td>
-<td>RO</td>
-<td>看门狗访问错误状态标志位<br>当一次错误password access或者modify access发生时，此位置起<br>当WDTxCON0.ENDINIT在一次正确的modify access被写1时此位清除<br>0：无看门狗访问错误<br>1：一次看门狗访问错误发生</td>
-</tr>
-</tbody></table>
-<h2 id="EndIinit-Timer-1"><a href="#EndIinit-Timer-1" class="headerlink" title="EndIinit Timer"></a>EndIinit Timer</h2><h3 id="SEICON0"><a href="#SEICON0" class="headerlink" title="SEICON0"></a>SEICON0</h3><table>
-<thead>
-<tr>
-<th>Bitfield</th>
-<th>Name</th>
-<th>ResetVal</th>
-<th>Access</th>
-<th>Desc</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>31:16</td>
-<td>REL</td>
-<td>65532</td>
-<td>RO</td>
-<td>endinit超时计数器重载值<br>固定值<br>读返回0xFFFC不可修改<br>password access时改位域必须写当前值<br>modify access时可写任意值并且会被忽略</td>
-</tr>
-<tr>
-<td>15:2</td>
-<td>EPW</td>
-<td>60</td>
-<td>RW</td>
-<td>用户可自定义密码<br>进行modify access时，该位域写入密码<br>此密码独立于CPUWDTx密码<br>读返回当前密码但是[7:2]被翻转以确保简单读写不足以满足喂狗需求<br>进行password access时，此位域必须写入当前内容值<br>应用复位后的默认密码是00000000111100B</td>
-</tr>
-<tr>
-<td>1</td>
-<td>ENDINIT</td>
-<td>1</td>
-<td>RW</td>
-<td>ENDINIT控制位<br>当前值由硬件控制<br>对SEICON0进行正确的password access后清除<br>对SEICON0进行正确的modify access后置位<br>在对SEICON0写入时，此位仅用于密码保护机制不会实际储存写入值</td>
-</tr>
-<tr>
-<td>0</td>
-<td>保留</td>
-<td>0</td>
-<td>RO</td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="SEICON1"><a href="#SEICON1" class="headerlink" title="SEICON1"></a>SEICON1</h3><table>
-<thead>
-<tr>
-<th>Bitfield</th>
-<th>Name</th>
-<th>ResetVal</th>
-<th>Access</th>
-<th>Desc</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>31:6</td>
-<td>保留</td>
-<td>0</td>
-<td>RO</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>IR1</td>
-<td>0</td>
-<td>RW</td>
-<td>输入频率请求控制位<br>IR0和IR1应该一起修改来指示时钟频率<br>只能在ENDINIT关闭时修改<br>IS0和IS1会在ENDINIT重新开启时被修改<br>当ENDINIT关闭，SEISR.IS0和SEISR.IS1控制定时器的当前输入时钟频率</td>
-</tr>
-<tr>
-<td>4</td>
-<td>保留</td>
-<td>0</td>
-<td>RO</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>DR</td>
-<td>0</td>
-<td>RW</td>
-<td>关闭请求控制位</td>
-</tr>
-<tr>
-<td>2</td>
-<td>IR0</td>
-<td>0</td>
-<td>RW</td>
-<td></td>
-</tr>
-<tr>
-<td>1:0</td>
-<td>保留</td>
-<td>0</td>
-<td>RO</td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="SEISR"><a href="#SEISR" class="headerlink" title="SEISR"></a>SEISR</h3><table>
-<thead>
-<tr>
-<th>Bitfield</th>
-<th>Name</th>
-<th>ResetVal</th>
-<th>Access</th>
-<th>Desc</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>31:16</td>
-<td>TIM</td>
-<td>65532</td>
-<td>RO</td>
-<td>定时器值<br>反应计数器当前计数值</td>
-</tr>
-<tr>
-<td>15:6</td>
-<td>保留</td>
-<td>0</td>
-<td>RO</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>IS1</td>
-<td>0</td>
-<td>RO</td>
-<td>定时器输入时钟状态<br>IS0和IS1应该被一起修改，它们用来指示当前WDTx的时钟频率（规则见上文）<br>当SEICON0.ENDINIT在一次正确的modify access被写1时，这两个位会被SEICON0.IR0和SEICON0.IR1修改</td>
-</tr>
-<tr>
-<td>4</td>
-<td>TO</td>
-<td>1</td>
-<td>RO</td>
-<td>定时器超时模式标志位<br>当进入超时模式时此位被置起，当退出超时模式时，此位被清除<br>0：定时器不在超时模式下<br>1：定时器在超时模式下</td>
-</tr>
-<tr>
-<td>3</td>
-<td>DS</td>
-<td>0</td>
-<td>RO</td>
-<td>定时器开启&#x2F;关闭状态标志位<br>当SEICON0.ENDINIT在一次正确的modify access被写1时，此位被更新为SEICON0.DR的值<br>当进入超时模式时，此位被清除<br>0：定时器开启<br>1：定时器关闭</td>
-</tr>
-<tr>
-<td>2</td>
-<td>IS0</td>
-<td>0</td>
-<td>RO</td>
-<td>定时器输入时钟状态，见IS1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>OE</td>
-<td>0</td>
-<td>RO</td>
-<td>定时器溢出错误状态位<br>当定时器从0xFFFF计数到0xFFFC时，此位置起<br>当SEICON0在一次正确的modify access时此位清除<br>0：无溢出错误<br>1：一次出错误发生</td>
-</tr>
-<tr>
-<td>0</td>
-<td>AE</td>
-<td>0</td>
-<td>RO</td>
-<td>定时器访问错误状态标志位<br>当一次错误password access或者modify access发生时，此位置起<br>当SEICON0.ENDINIT在一次正确的modify access被写1时此位清除<br>0：无看门狗访问错误<br>1：一次看门狗访问错误发生</td>
-</tr>
-</tbody></table>
 
 </div>
 
@@ -1678,16 +1204,11 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%A4%96%E8%AE%BE/CAN/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  CAN
-              </a>
-            
         </div>
         <div class="item right">
             
-              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Map%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">
-                Map文件解析
+              <a href="/2024/06/06/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/%E5%8A%A0%E5%85%A5PBL%E5%90%8E%E8%87%AA%E6%A3%80%E4%B8%8D%E9%80%9A%E8%BF%87%E4%B8%94%E5%91%8A%E8%AD%A6/">
+                加入PBL后自检不通过且告警
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
