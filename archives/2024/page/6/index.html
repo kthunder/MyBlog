@@ -180,20 +180,9 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/02SASP_WEB/SASP-web%E5%89%8D%E7%AB%AF%E9%85%8D%E7%BD%AE/">
+									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/02SASP_WEB/SASP-WEB/">
                      
-										    SASP-web前端配置
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-							<ul>
-								<li class="file">
-									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/02SASP_WEB/SASP-%E5%89%8D%E7%AB%AF/">
-                     
-										    SASP-前端
+										    SASP-WEB
                      
 									</a>
 								</li>
@@ -238,6 +227,28 @@
 									<a href="/2024/05/31/20%E9%A1%B9%E7%9B%AE/03PIAS/TLS1.2%E5%8D%8F%E8%AE%AE/">
                      
 										    TLS1.2协议
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04ALIOTH_A8
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/06/13/20%E9%A1%B9%E7%9B%AE/04ALIOTH_A8/A8/">
+                     
+										    A8
                      
 									</a>
 								</li>
@@ -1152,6 +1163,29 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/%E4%BF%AE%E6%94%B9delay%E5%AE%9E%E7%8E%B0/">
+				<h2 class="index-title">
+					修改delay实现
+				</h2>
+				<div class="index-brief">
+					修改delay实现修改delay实现实现延时的可选项FreeRTOS占用了SysTick，需要使用其他方式实现delay。
+
+TIMX ： 使用TIM定时器，但是会占用资源
+SysTick：系统定时器，被占用了
+count–：纯软件实现，需要测试指令周期和延时函数本身和调用引起的误差
+DWT-&gt
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/FreeRTOS/Contex-M3%E5%86%85%E6%A0%B8%E6%A6%82%E8%BF%B0/">
 				<h2 class="index-title">
 					Contex-M3内核概述
@@ -1377,30 +1411,6 @@ leastsignificantbit
 
 
 
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/MAKE/makefile/">
-				<h2 class="index-title">
-					makefile
-				</h2>
-				<div class="index-brief">
-					makefile三种不同的变量赋值符号
-
-&#x3D; 按最后面的就行定义
-:&#x3D; 只按之前的就行定义
-?&#x3D; 如果被定义过了就不重新进行定义
 
 
 					...
