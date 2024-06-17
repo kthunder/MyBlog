@@ -117,7 +117,7 @@
 	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
 	
 	<div id="site-toc">
-		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
 		<div id="tree">
 			
 
@@ -1189,15 +1189,66 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1 id="简历"><a href="#简历" class="headerlink" title="简历"></a>简历</h1><h1 id="武汉劲融-JAVA后端-2021-6-2021-11"><a href="#武汉劲融-JAVA后端-2021-6-2021-11" class="headerlink" title="武汉劲融 JAVA后端 2021.6-2021.11"></a>武汉劲融 JAVA后端 2021.6-2021.11</h1><h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><p>熟悉 Java语言, C语言, MySQL数据库,Git工具; 熟练使用 Spring,Mybatis,Spring MVC,Spring Boot 框架。</p>
+	<h1 id="简历"><a href="#简历" class="headerlink" title="简历"></a>简历</h1><h1 id="上海芯钛-C语言开发-2022-3-至今"><a href="#上海芯钛-C语言开发-2022-3-至今" class="headerlink" title="上海芯钛 C语言开发 2022.3-至今"></a>上海芯钛 C语言开发 2022.3-至今</h1><h2 id="个人优势"><a href="#个人优势" class="headerlink" title="个人优势"></a>个人优势</h2><ol>
+<li>熟练掌握 C 语言，熟悉 Misra-C 规范，具有良好的编程习惯</li>
+<li>熟练掌握 GNU 链接脚本和 Makefile 开发和维护，熟悉 CMake 工具</li>
+<li>熟练掌握基于 ARM Cortex-M 系列内核的 MCU 驱动(主要负责 FLS&#x2F;EEP&#x2F;WDG&#x2F;STM 模块)开发和测试</li>
+<li>熟悉 AUTOSAR 规范以及 Polyspace&#x2F;EB tresos&#x2F;Vector CAST 等车规生态工具</li>
+<li>熟悉 FreeRTOS 原理</li>
+<li>熟悉 ASPICE 功能安全规范流程</li>
+<li>具有良好团队合作精神，积极主动反馈问题，虚心接受指导</li>
+<li>较强的责任心，良好的职业素养，人品正直诚实</li>
+<li>逻辑能力强，热爱技术，良好技术学习能力</li>
+<li>较好的沟通能力，快速理解客户需求并提出解决方案</li>
+</ol>
+<h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><p>● 安全芯片的固件以及上位机SDK开发与测试：</p>
+<ol>
+<li>使用Vector CAST完成模块的单元测试</li>
+<li>集成测试和合格性测试，编写测试文档</li>
+<li>Makefile开发和维护</li>
+</ol>
+<p>● 自研车规MCU Alioth8开发与测试：</p>
+<ol>
+<li>参与模块的需求分析和软件架构设计，编写设计文档</li>
+<li>根据详细设计和硬件手册完成驱动开发</li>
+<li>完成模块的单元测试、集成测试和合格性测试，编写测试文档</li>
+<li>根据AUTOSAR需求规范实现MemMap、并开发维护配套的链接脚本</li>
+<li>Bootloader</li>
+<li>为公司关键客户提供技术支持</li>
+</ol>
+<h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h3 id="Alioth"><a href="#Alioth" class="headerlink" title="Alioth"></a>Alioth</h3><p>Alioth8是一款基于 Cortex-M7内核的车规级国产自研MCU芯片，对标国外TC3XX和S32K3XX系列芯片。此款芯片已在BHSS的EPS项目量产，并且与国内多家供应商合作，推进汽车零部件国产化。本人负责 FLS、EEP、WDG和 STM  模块的芯片测试、MBS  软件开发和测试。<br>● 芯片测试：</p>
+<ol>
+<li>根据硬件详细设计说明书和硬件技术需求说明书编写测试策略、用例</li>
+<li>经过项目组评审通过后开始测试，在硅前使用 FPGA或 RTL  仿真进行测试，硅后为板级集成测试</li>
+<li>在测试过程中发现的 BUG  提交缺陷给相应的 IC  设计人员</li>
+<li>测试完成后编写相应测试报告并进行评审<br>● MBS  软件开发和测试（全称为 MCAL-BSP-SAFETYLIB），是符合功能安全 ASIL-B的 Alioth 8芯片配套驱动包，整个流程符合 ASPICE 流程要求。</li>
+<li>参考硬件详细设计书和硬件需求说明书以及 AutoSar  规范编写软件需求说明书</li>
+<li>根据需求说明书编写软件架构说明书以及软件详细设计书</li>
+<li>根据软件详细设计书进行符合 AutoSar  规范的驱动开发，并进行软件安全分析，编写 DFEMA</li>
+<li>根据软件详细设计说明书进行静态单元测试，使用 polyspace  进行代码检查以保证代码符合 MisarC  规范，然后进行动态单元测试，保证代码的语句&#x2F;分支覆盖</li>
+<li>根据软件架构说明书编写集成测试用例，并编写自动化测试脚本以保证函数覆盖率和调用覆盖率</li>
+<li>根据软件需求说明书编写合格性测试用例，并编写自动化测试脚本以保证软件功能</li>
+<li>为客户提供技术支持和相关答疑</li>
+</ol>
+<h3 id="MizarU"><a href="#MizarU" class="headerlink" title="MizarU"></a>MizarU</h3><p>MizarU3是一款面向汽车电子领域(T-BOX、蓝牙钥匙等)的加密芯片产品。通过SPI和I2C接口等与上位机进行数据交互，上位机通过SDK调用芯片接口可进行各类密码运算、密钥产生、密钥存储及管理、真随机数产生等操作，实现上位机应用需要的各类安全功能服务。本人负责SDK部分模块的开发 Msg分组模块、Driver分组模块、SoftAlg分组模块</p>
+<ol>
+<li>对负责的模块编写详细设计文档</li>
+<li>使用Vector CAST对负责的模块进行单元测试，满足代码行和分支的覆盖，编写单元测试文档和报告</li>
+<li>编写集成测试和合格性测试用例和文档，使用gcov和lcov工具生成测试报告</li>
+<li>负责测试代码的Makefile维护(适配不同的编译环境)</li>
+</ol>
+<h1 id="武汉劲融-JAVA后端-2021-6-2021-11"><a href="#武汉劲融-JAVA后端-2021-6-2021-11" class="headerlink" title="武汉劲融 JAVA后端 2021.6-2021.11"></a>武汉劲融 JAVA后端 2021.6-2021.11</h1><h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><p>熟悉 Java语言, C语言, MySQL数据库,Git工具; 熟练使用 Spring,Mybatis,Spring MVC,Spring Boot 框架。</p>
 <p>了解前端基础知识 Html&#x2F;CSS&#x2F;JavaScript,能够使用 Vue 框架; 能够独立部署 Spring Boot+Vue 前后端分离项目。</p>
-<h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><p>2021.6-2021.11</p>
+<h2 id="项目经历-1"><a href="#项目经历-1" class="headerlink" title="项目经历"></a>项目经历</h2><p>2021.6-2021.11</p>
 <p>项目描述:综合素质测评系统对学生的各项数据进行采集,主要从学业,表现,体质,纪实 四个模块对数据进行分析,全面观察、记录、分析学生发展状况,辅以(登分册,课堂评价, 座位调整)等其他功能帮助老师减负。面向老师和家长提供 WEB 端及钉钉小程序。让老师家 长更大程度的了解孩子的成长情况。<br>采用三层架构以及模块式的开发,实现表现层、业务层、 数据层,访问层的分离,以及各应用模块的独立。</p>
 <p>2021.12-2022.2</p>
 <p>项目描述:灵动嘉奖令是小学生的奖励系统,由老师对表现良好的学生颁发嘉奖令,学生可以使用嘉奖令兑换心愿,同时家长也通过钉钉小程序参与其中,使老师,学生,家长在课业 之余友好地进行互动,助力孩子的成长。为班主任及之上角色提供数据分析功能,和 Excel 报表导出功能,提供钉钉小程序和 WEB 端后台管理页面。<br>后端技术栈:Spring Boot,Spring MVC,Mybatis Plus,MySQL,Easy Excel,itext 等。<br>责任描述:数据表构建,项目框架搭建,功能模块编码,系统维护改进,说明文档编写,客 户需求对接。</p>
 <h2 id="项目收获"><a href="#项目收获" class="headerlink" title="项目收获"></a>项目收获</h2><p>在这两个项目的开发中,对数据库设计有了进一步的理解,明白了缓存对流量高峰的重要性,了解了架构设计的重要性。</p>
-<h2 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h2><p>具有良好团队合作精神,积极主动反馈问题,虚心接受指导; 有责任心,良好的职业素养,人品正直诚实; 充满工作热情,能承受工作压力; 逻辑能力强,较好的沟通能力与技术学习能力;</p>
-<h1 id="上海芯钛-C语言开发-2022-3-至今"><a href="#上海芯钛-C语言开发-2022-3-至今" class="headerlink" title="上海芯钛 C语言开发 2022.3-至今"></a>上海芯钛 C语言开发 2022.3-至今</h1><h2 id="技能-1"><a href="#技能-1" class="headerlink" title="技能"></a>技能</h2><h2 id="项目经历-1"><a href="#项目经历-1" class="headerlink" title="项目经历"></a>项目经历</h2><h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><h2 id="自我评价-1"><a href="#自我评价-1" class="headerlink" title="自我评价"></a>自我评价</h2>
+<h2 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h2><p>具有良好团队合作精神,积极主动反馈问题,虚心接受指导;</p>
+<p>有责任心,良好的职业素养,人品正直诚实;</p>
+<p>充满工作热情,能承受工作压力;</p>
+<p>逻辑能力强,较好的沟通能力与技术学习能力;</p>
+
 </div>
 
 <!-- post-guide -->
@@ -1205,16 +1256,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E8%8A%AF%E7%89%87%E5%8E%9F%E5%8E%82%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
+              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Debuge%E7%BB%8F%E9%AA%8C/bootload%E4%B8%AD%E8%B0%83%E7%94%A8fls%E6%93%A6%E9%99%A4%E5%A4%B1%E8%B4%A5/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  芯片原厂软件开发
+                  bootload中调用fls擦除失败
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E9%AB%98%E6%95%B0/">
-                高数
+              <a href="/2024/05/31/90%E6%9D%82%E9%A1%B9/%E8%8A%AF%E7%89%87%E5%8E%9F%E5%8E%82%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
+                芯片原厂软件开发
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
