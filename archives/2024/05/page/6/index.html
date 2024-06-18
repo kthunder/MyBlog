@@ -1163,12 +1163,13 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BSP%E6%A6%82%E8%BF%B0/">
+			<a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BootLoader/">
 				<h2 class="index-title">
-					BSP概述
+					BootLoader
 				</h2>
 				<div class="index-brief">
-					BSP概述1. BSP概述BSP即Board Support Package，板级支持包。它来源于嵌入式操作系统与硬件无关的设计思想，操作系统被设计为运行在虚拟的硬件平台上。对于具体的硬件平台，与硬件相关的代码都被封装在BSP中，由BSP向上提供虚拟的硬件平台，BSP与操作系统通过定义好的接口进行交
+					BootLoaderBootloader的主要任务是引导加载并运行应用程序，一般软件升级的逻辑也可以在其中实现
+一、相关基础知识1.Flash的类型（NOR or NAND）NOR Flash和NAND Flash是两种常见的非易失性存储器(Flash Memory)类型，它们在内部结构、使用场景和
 					...
 				</div>
 			</a>
@@ -1278,30 +1279,6 @@ leastsignificantbit
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/MAKE/makefile/">
-				<h2 class="index-title">
-					makefile
-				</h2>
-				<div class="index-brief">
-					makefile三种不同的变量赋值符号
-
-&#x3D; 按最后面的就行定义
-:&#x3D; 只按之前的就行定义
-?&#x3D; 如果被定义过了就不重新进行定义
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-05-31</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/MAKE/GCC%E5%8F%82%E6%95%B0/">
 				<h2 class="index-title">
 					GCC参数
@@ -1326,12 +1303,18 @@ leastsignificantbit
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/LINUX/linux%E8%AE%BE%E7%BD%AE/">
+			<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/MAKE/makefile/">
 				<h2 class="index-title">
-					linux设置
+					makefile
 				</h2>
 				<div class="index-brief">
-					设置开发板ip123456789#配置ip和掩码ifconfig eth0 192.168.1.233 netmask 255.255.255.0#配置mac地址ifconfig eth0 hw ether 00:99:07:14:66:66#配置网关route add default gw 192
+					makefile三种不同的变量赋值符号
+
+&#x3D; 按最后面的就行定义
+:&#x3D; 只按之前的就行定义
+?&#x3D; 如果被定义过了就不重新进行定义
+
+
 					...
 				</div>
 			</a>
@@ -1357,6 +1340,24 @@ chmod &lt;权限&gt; -R 目录
 
 u: Current user
 g: Curr
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-05-31</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/LINUX/linux%E8%AE%BE%E7%BD%AE/">
+				<h2 class="index-title">
+					linux设置
+				</h2>
+				<div class="index-brief">
+					设置开发板ip123456789#配置ip和掩码ifconfig eth0 192.168.1.233 netmask 255.255.255.0#配置mac地址ifconfig eth0 hw ether 00:99:07:14:66:66#配置网关route add default gw 192
 					...
 				</div>
 			</a>
