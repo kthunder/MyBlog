@@ -117,7 +117,7 @@
 	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
 	
 	<div id="site-toc">
-		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
 		<div id="tree">
 			
 
@@ -1205,57 +1205,70 @@
 <p>Data段的内容需要在运行时修改，所以一定要配合启动脚本，在启动时copy到RAM中使用</p>
 <p>BSS段由于全是0，所以不会实际写入镜像文件，只记录位置和大小，在启动脚本中清零对应RAM空间即可</p>
 <p><strong>加速需求</strong>，由于所有flash在高频的处理器中，flash读取指令的速度远远跟不上CPU执行指令的速度，所以CPU需要等待flash读取指令或者数据，存在flash读取等待周期，这时，对应某些性能要求敏感的函数，我们可以把他链接到RAM空间或者TCM（ITCM和DTCM CortexM核可能附带的高性能存储空间）空间运行，配合启动脚本在启动时拷贝函数到RAM或者TCM，可以做到指令的读取无需等待</p>
-<h1 id="二、程序镜像文件格式Image"><a href="#二、程序镜像文件格式Image" class="headerlink" title="二、程序镜像文件格式Image"></a>二、程序镜像文件格式Image</h1><h2 id="不同的编译链生成的镜像文件不同，常见的如下："><a href="#不同的编译链生成的镜像文件不同，常见的如下：" class="headerlink" title="不同的编译链生成的镜像文件不同，常见的如下："></a>不同的编译链生成的镜像文件不同，常见的如下：</h2><ul>
+<h2 id="3-程序镜像文件格式Image"><a href="#3-程序镜像文件格式Image" class="headerlink" title="3.程序镜像文件格式Image"></a>3.程序镜像文件格式Image</h2><h3 id="不同的编译链生成的镜像文件不同，常见的如下："><a href="#不同的编译链生成的镜像文件不同，常见的如下：" class="headerlink" title="不同的编译链生成的镜像文件不同，常见的如下："></a>不同的编译链生成的镜像文件不同，常见的如下：</h3><ul>
 <li><strong>ELF</strong>：包含可执行代码、数据和其他加载和执行程序所需的信息，可用于调试、分析和部署到目标设备</li>
-<li><strong>HEX</strong>：由十六进制数及其对应的内存地址组成，可以将程序解析和编程到目标设备的内存中（）</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/shoule/p/15950388.html">HEX 文件格式详解 - 勇敢蘑菇 - 博客园</a></p>
-<ul>
+<li><strong>HEX</strong>：由十六进制数及其对应的内存地址组成，可以将程序解析和编程到目标设备的内存中 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/shoule/p/15950388.html">HEX 文件格式详解 - 勇敢蘑菇 - 博客园</a></li>
 <li><strong>BIN</strong>：BIN文件是直接包含可执行机器代码的二进制文件。它们通常用于以原始二进制格式存储最终编译的代码。</li>
 <li>AXF：用于基于ARM的微控制器。它包含可执行代码、数据和调试信息。AXF文件通常在开发和调试过程中使用</li>
 <li>S19：以特定格式的ASCII字符表示二进制数据。S19文件包含数据和内存地址，常用于编程旧的微控制器和EEPROM</li>
 <li>SREC：类似于S19的文件格式。它以ASCII字符表示二进制数据，但遵循不同的格式</li>
 </ul>
-<aside>
-💡 最终下载进入flash都是bin格式的文件，其他格式都是为了调试方便而附带了调试信息
-
-</aside>
-
-<h1 id="三、Flash相关函数需要放入RAM中执行"><a href="#三、Flash相关函数需要放入RAM中执行" class="headerlink" title="三、Flash相关函数需要放入RAM中执行"></a>三、Flash相关函数需要放入RAM中执行</h1><p>某些FLASH控制器不允许在同一个block中执行擦&#x2F;写操作时（不支持<code>RWW，Read while Writing</code>），进行读取的动作（可能FLASH操作相关代码在这个block上），可以通过链接脚本配合启动脚本进行如下两种操作解决</p>
-<ol>
-<li><strong>放入RAM中执行</strong></li>
-<li><strong>放到不进行擦写的block上</strong></li>
-</ol>
-<h1 id="四、BootLoader执行步骤"><a href="#四、BootLoader执行步骤" class="headerlink" title="四、BootLoader执行步骤"></a>四、BootLoader执行步骤</h1><p>不同MCU的BootLoader实现原理都相同，这里描述一下通用的一些步骤。</p>
-<ol>
-<li>查看RAM和ROM的地址映射范围，确认我们可以使用的资源有多少</li>
-<li>确认我们使用的资源不多于分配给BootLoader使用的</li>
-<li>如果boot实现了更新固件功能，要注意flash擦写代码存放的位置</li>
-<li>注意MPU、时钟、低功耗等配置</li>
-<li>注意保持boot和app上下文一致，或者直接清除boot产生的状态，例如在boot中配置的外设记得还原，特别是cache的开关要注意（还有就是有些硬件会在Power On Reset中自动清零内存，如果由Bootloader跳转过来是不会触发这个硬件的清零动作，需要注意）</li>
-<li>获取SP和PC的值</li>
-</ol>
-<p>在Cortex-M系统中，SP一般存放在向量表第一个向量，在上电时，Cortex-M核自动将它加载到SP寄存器，但是我们的APP不是从上电开始启动，所以这个SP的设置需要我们手动执行</p>
+<p>💡 最终下载进入flash都是bin格式的文件，其他格式都是为了调试方便而附带了调试信息</p>
+<h2 id="4-Cortex-M启动机制"><a href="#4-Cortex-M启动机制" class="headerlink" title="4.Cortex-M启动机制"></a>4.Cortex-M启动机制</h2><p>在Cortex-M系统中，SP一般存放在向量表第一个向量，在上电时，Cortex-M核自动将它加载到SP寄存器，但是我们的APP不是从上电开始启动，所以这个SP的设置需要我们手动执行</p>
 <p>PC的值是cpu执行下一条指令的地址，Cortex-M核上电第二步是将向量表第二个向量设置为PC的值，这个向量是复位向量Reset_Handler，用于控制系统的启动</p>
 <ol>
 <li>设置MSP、PSP、VTOR的值</li>
 </ol>
 <p>MSP是主栈指针</p>
 <p>PSP是进程栈指针，一般用于权限较低的应用使用，例如RTOS的普通task</p>
-<p>VTOR是Cortex-M向量表重定向寄存器，一般Cortex-M将flash起始位置当做向量表的开头，使用boot后，APP的向量表一般不在flash起始位置，所以需要重定向一下，<strong>这个操作非常重要，因为它决定了中断执行的函数地址在哪里寻找，如果不修改，APP产生的中断会在boot的向量表里面找中断函数的地址</strong>，另外有个值得注意的地方是有些程序在设置完VTOR后执行软件复位也可以跳转到APP中，这是触发了Reset_Handler执行导致的，这样会多消耗一个软件复位的时间，一般不这样进行跳转</p>
-<h1 id="五、可优化的地方"><a href="#五、可优化的地方" class="headerlink" title="五、可优化的地方"></a>五、可优化的地方</h1><h2 id="APP升级时的可靠性保证"><a href="#APP升级时的可靠性保证" class="headerlink" title="APP升级时的可靠性保证"></a>APP升级时的可靠性保证</h2><p>在固件升级时，可能突发断电，此时APP还没在FLASH准备完成（可能刚刚擦除APP或者新的APP还没写入完成），这样我们再启动就没有完整的APP可用</p>
+<p>VTOR是Cortex-M向量表重定向寄存器，一般Cortex-M将flash起始位置当做向量表的开头，使用boot后，APP的向量表一般不在flash起始位置，所以需要重定向一下，<strong>这个操作非常重要，因为它决定了中断执行的函数地址在哪里寻找，如果不修改，APP产生的中断会在boot的向量表里面找中断函数的地址</strong>，<del>另外有个值得注意的地方是有些程序在设置完VTOR后执行软件复位也可以跳转到APP中，这是触发了Reset_Handler执行导致的，这样会多消耗一个软件复位的时间，一般不这样进行跳转</del></p>
+<blockquote>
+<p>勘误：软件复位会导致VTOR寄存器也重置</p>
+</blockquote>
+<h1 id="二、注意事项"><a href="#二、注意事项" class="headerlink" title="二、注意事项"></a>二、注意事项</h1><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>查看RAM和ROM的地址映射范围，确认我们可以使用的资源有多少</li>
+<li>确认我们使用的资源不多于分配给BootLoader使用的</li>
+<li>如果boot实现了更新固件功能，要注意flash擦写代码存放的位置</li>
+<li>注意MPU、时钟、低功耗等配置</li>
+<li>注意保持boot和app上下文一致，或者直接清除boot产生的状态，例如在boot中配置的外设记得还原，特别是cache的开关要注意（还有就是有些硬件会在Power On Reset中自动清零内存，如果由Bootloader跳转过来是不会触发这个硬件的清零动作，需要注意）</li>
+</ol>
+<h2 id="Flash相关函数需要放入RAM中执行"><a href="#Flash相关函数需要放入RAM中执行" class="headerlink" title="Flash相关函数需要放入RAM中执行"></a>Flash相关函数需要放入RAM中执行</h2><p>某些FLASH控制器不允许在同一个block中执行擦&#x2F;写操作时（不支持<code>RWW，Read while Writing</code>），进行读取的动作（可能FLASH操作相关代码在这个block上），可以通过链接脚本配合启动脚本进行如下两种操作解决</p>
+<ol>
+<li><strong>放入RAM中执行</strong></li>
+<li><strong>放到不进行擦写的block上</strong></li>
+</ol>
+<h1 id="三、BootLoader执行步骤"><a href="#三、BootLoader执行步骤" class="headerlink" title="三、BootLoader执行步骤"></a>三、BootLoader执行步骤</h1><p>不同MCU的BootLoader实现原理都相同，这里描述一下通用的一些步骤。</p>
+<ol>
+<li>关中断</li>
+<li>清状态（中断挂起标志、各ip的状态）</li>
+<li>开中断</li>
+<li>设置向量表</li>
+<li>清理环境</li>
+<li>跳转到APP</li>
+</ol>
+<h2 id="跳转前清理环境的两种方式"><a href="#跳转前清理环境的两种方式" class="headerlink" title="跳转前清理环境的两种方式"></a>跳转前清理环境的两种方式</h2><ul>
+<li>如果跳转的时候允许复位，那最好的方法就是跳转之前软复位一下，然后读复位原因，如果是软件复位，那么就直接跳应用地址</li>
+<li>如果不允许复位，就得把外设去初始化，比如收发器、CAN之类的，不过MCU、时钟等关键的部分不能清除。然后如果用的是中断的话，也得把中断清掉</li>
+</ul>
+<h1 id="四、可优化的地方"><a href="#四、可优化的地方" class="headerlink" title="四、可优化的地方"></a>四、可优化的地方</h1><h2 id="APP升级时的可靠性保证"><a href="#APP升级时的可靠性保证" class="headerlink" title="APP升级时的可靠性保证"></a>APP升级时的可靠性保证</h2><p>在固件升级时，可能突发断电，此时APP还没在FLASH准备完成（可能刚刚擦除APP或者新的APP还没写入完成），这样我们再启动就没有完整的APP可用</p>
 <p>对于这种情况，我们可以使用A&#x2F;B块的形式，加载两个APP进去，这样随时都剩下一个可用的APP，另外一个块用于升级，然后在boot中判断跳转到哪个APP中，缺点就是占用的flash资源会翻倍</p>
 <h2 id="固件的安全性保证"><a href="#固件的安全性保证" class="headerlink" title="固件的安全性保证"></a>固件的安全性保证</h2><p>固件完整性检测，我们的固件可被恶意修改或者flash失效导致数据变化，我们可以使用密码学中的签名算法对固件完整性进行保护，签名算法可以高效率得计算固件的特征值，如果验签失败则说明固件不完整，我们需要取消跳转，并且抛出错误</p>
 <p>另外一种是固件被复制，这种可以通过硬件上进行加密，例如写入的固件就是密文，硬件读取时自动解密，如果硬件不带这种功能，我们只能在软件中通过口令或者密钥限制APP运行，口令或者密钥存放于外部接口不可访问的地方</p>
 <p>以上仅举例，还有很多不同的执行方案可用</p>
-<h1 id="六、BootLoader-Demo"><a href="#六、BootLoader-Demo" class="headerlink" title="六、BootLoader Demo"></a>六、BootLoader Demo</h1><p>以下是最简略的boot实现代码举例：</p>
+<h1 id="五、不同功能boot的类型"><a href="#五、不同功能boot的类型" class="headerlink" title="五、不同功能boot的类型"></a>五、不同功能boot的类型</h1><ul>
+<li>读取sd卡或者其他存储器更新APP</li>
+<li>使用上位机通过通信总线发送APP到MCU更新程序</li>
+<li>动态加载APP，编译与地址无关的APP烧录后跳转运行，执行完还可以烧录其他功能</li>
+</ul>
+<h1 id="七、BootLoader-Demo"><a href="#七、BootLoader-Demo" class="headerlink" title="七、BootLoader Demo"></a>七、BootLoader Demo</h1><p>以下是最简略的boot实现代码举例：</p>
+<blockquote>
 <ol>
 <li>set SCB→VTOR</li>
-<li>set MSP</li>
-<li>set PSP</li>
+<li>set MSP、PSP</li>
 <li>set PC</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> FLASH_START_ADDRESS       	(0x01000000)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BOOTLOARD_SIZE_IN_BYTES     (0x8000)	<span class="comment">// demo bootloard size is 32K</span></span></span><br><span class="line"><span class="comment">//#define MAIN_START_ADDRESS			 FLASH_START_ADDRESS + BOOTLOARD_SIZE_IN_BYTES</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAIN_START_ADDRESS			0x010904A0</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">MSR_MSP</span><span class="params">(<span class="type">uint32_t</span> addr)</span></span><br><span class="line">&#123;</span><br><span class="line">	__asm <span class="title function_">volatile</span></span><br><span class="line">	<span class="params">(</span></span><br><span class="line"><span class="params">		<span class="string">&quot;msr msp, r0   \n&quot;</span></span></span><br><span class="line"><span class="params">		<span class="string">&quot;bx r14    \n&quot;</span></span></span><br><span class="line"><span class="params">	)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">MSR_PSP</span><span class="params">(<span class="type">uint32_t</span> addr)</span></span><br><span class="line">&#123;</span><br><span class="line">	__asm <span class="title function_">volatile</span></span><br><span class="line">	<span class="params">(</span></span><br><span class="line"><span class="params">		<span class="string">&quot;msr psp, r0   \n&quot;</span></span></span><br><span class="line"><span class="params">		<span class="string">&quot;bx r14    \n&quot;</span></span></span><br><span class="line"><span class="params">	)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//! @brief Exits bootloader and jumps to the user application.</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">jump_to_application</span><span class="params">(<span class="type">uint32_t</span> pcPointer, <span class="type">uint32_t</span> stackPointer)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// Create the function call to the user application.</span></span><br><span class="line">	<span class="comment">// Static variables are needed since changed the stack pointer out from under the compiler</span></span><br><span class="line">	<span class="comment">// we need to ensure the values we are using are not stored on the previous stack</span></span><br><span class="line">	<span class="type">static</span> <span class="title function_">void</span> <span class="params">(*secondStageApplication)</span><span class="params">(<span class="type">void</span>)</span> = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	secondStageApplication = (<span class="type">void</span> (*)(<span class="type">void</span>))pcPointer;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Set the VTOR to the application vector table address.</span></span><br><span class="line">	TT_SCB-&gt;VTOR = MAIN_START_ADDRESS;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Set stack pointers to the application stack pointer.</span></span><br><span class="line">	MSR_MSP(stackPointer);</span><br><span class="line">	MSR_PSP(stackPointer);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Jump to the application.</span></span><br><span class="line">	secondStageApplication();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">uint32_t</span> pcPointer, stackPointer;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	stackPointer = *(<span class="type">uint32_t</span>*)(MAIN_START_ADDRESS);</span><br><span class="line">	pcPointer = *(<span class="type">uint32_t</span>*)(MAIN_START_ADDRESS + <span class="number">4</span>);</span><br><span class="line">	jump_to_application(pcPointer, stackPointer);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> FLASH_START_ADDRESS       	(0x01000000)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BOOTLOARD_SIZE_IN_BYTES     (0x00100000)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAIN_START_ADDRESS          FLASH_START_ADDRESS + BOOTLOARD_SIZE_IN_BYTES</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//! @brief Exits bootloader and jumps to the user application.</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">jump_to_application</span><span class="params">(<span class="type">uint32_t</span> pcPointer, <span class="type">uint32_t</span> stackPointer)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// Create the function call to the user application.</span></span><br><span class="line">	<span class="comment">// Static variables are needed since changed the stack pointer out from under the compiler</span></span><br><span class="line">	<span class="comment">// we need to ensure the values we are using are not stored on the previous stack</span></span><br><span class="line">	<span class="type">static</span> <span class="title function_">void</span> <span class="params">(*secondStageApplication)</span><span class="params">(<span class="type">void</span>)</span> = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	secondStageApplication = (<span class="type">void</span> (*)(<span class="type">void</span>))pcPointer;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Set the VTOR to the application vector table address.</span></span><br><span class="line">	TT_SCB-&gt;VTOR = MAIN_START_ADDRESS;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Set stack pointers to the application stack pointer.</span></span><br><span class="line">	ASM_KEYWORD(<span class="string">&quot;MSR msp, %0\n&quot;</span> : : <span class="string">&quot;r&quot;</span> (stackPointer));</span><br><span class="line">	ASM_KEYWORD(<span class="string">&quot;MSR psp, %0\n&quot;</span> : : <span class="string">&quot;r&quot;</span> (stackPointer));</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Jump to the application.</span></span><br><span class="line">	secondStageApplication();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">uint32_t</span> stackPointer = *(<span class="type">uint32_t</span>*)(MAIN_START_ADDRESS);</span><br><span class="line">	<span class="type">uint32_t</span> pcPointer = *(<span class="type">uint32_t</span>*)(MAIN_START_ADDRESS + <span class="number">4</span>);</span><br><span class="line">	jump_to_application(pcPointer, stackPointer);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </div>
 
 <!-- post-guide -->
@@ -1263,16 +1276,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BSP%E6%A6%82%E8%BF%B0/">
+              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/Contex-M3%E4%B8%AD%E6%96%AD/M3%E4%B8%AD%E6%96%AD/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  BSP概述
+                  M3中断
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/AUTOSAR%20OS/OS/">
-                OS
+              <a href="/2024/05/31/50%E5%B5%8C%E5%85%A5%E5%BC%8F/BSP%E6%A6%82%E8%BF%B0/">
+                BSP概述
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

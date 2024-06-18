@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		linux设置 | 
+		About | 
 	 
 	kong lei&#39;s Blog
 	</title>
@@ -335,7 +335,7 @@
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/LINUX/linux%E8%AE%BE%E7%BD%AE/">
                      
 										    linux设置
@@ -1163,7 +1163,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	linux设置
+	About
 </h1>
 
 <!-- meta -->
@@ -1171,17 +1171,11 @@
 	
 
 	<span>kong lei</span>
-	<span>2024-05-31 15:16:37</span>
+	<span>2024-06-18 18:50:24</span>
 
   <div id="article-categories">
     
-		  <span>Categories：</span>
-      
-    
 
-    
-		    <span>Tags：</span>
-        
     
   </div>
 
@@ -1189,50 +1183,11 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1 id="设置开发板ip"><a href="#设置开发板ip" class="headerlink" title="设置开发板ip"></a>设置开发板ip</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#配置ip和掩码</span><br><span class="line">ifconfig eth0 192.168.1.233 netmask 255.255.255.0</span><br><span class="line">#配置mac地址</span><br><span class="line">ifconfig eth0 hw ether 00:99:07:14:66:66</span><br><span class="line">#配置网关</span><br><span class="line">route add default gw 192.168.1.254</span><br><span class="line"></span><br><span class="line">exit 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+	<p>HELLO</p>
 
-<h1 id="树莓派"><a href="#树莓派" class="headerlink" title="树莓派"></a>树莓派</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#配置树莓派</span><br><span class="line">sudo raspi-config 1</span><br><span class="line">#树莓派换源</span><br><span class="line">&lt;https://mirror.tuna.tsinghua.edu.cn/help/raspbian/&gt;</span><br><span class="line"></span><br><span class="line"># aarch64 用户：编辑 `/etc/apt/sources.list` 文件，用以下内容取代：</span><br><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb &lt;https://mirrors.tuna.tsinghua.edu.cn/debian/&gt; bullseye main contrib non-free</span><br><span class="line"># deb-src &lt;https://mirrors.tuna.tsinghua.edu.cn/debian/&gt; bullseye main contrib non-free</span><br><span class="line">deb &lt;https://mirrors.tuna.tsinghua.edu.cn/debian/&gt; bullseye-updates main contrib non-free</span><br><span class="line"># deb-src &lt;https://mirrors.tuna.tsinghua.edu.cn/debian/&gt; bullseye-updates main contrib non-free</span><br><span class="line">deb &lt;https://mirrors.tuna.tsinghua.edu.cn/debian/&gt; bullseye-backports main contrib non-free</span><br><span class="line"># deb-src &lt;https://mirrors.tuna.tsinghua.edu.cn/debian/&gt; bullseye-backports main contrib non-free</span><br><span class="line">deb &lt;https://mirrors.tuna.tsinghua.edu.cn/debian-security&gt; bullseye-security main contrib non-free</span><br><span class="line"># deb-src &lt;https://mirrors.tuna.tsinghua.edu.cn/debian-security&gt; bullseye-security main contrib non-free</span><br><span class="line"></span><br><span class="line"># 对于两个架构，编辑 `/etc/apt/sources.list.d/raspi.list` 文件，删除原文件所有内容，用以下内容取代：</span><br><span class="line">deb &lt;http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/&gt; bullseye main</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="更新环境变量"><a href="#更新环境变量" class="headerlink" title="更新环境变量"></a>更新环境变量</h1><p>source &#x2F;etc&#x2F;profile<br><strong>二、解决办法方法一：</strong><br>在 ~&#x2F;.bashrc 里面加一句 source &#x2F;etc&#x2F;profile ,然后执行一次 source ~&#x2F;.bashrc 使该文件生效即可。<br><strong>方法二：</strong><br>直接将配置语句写在 ~&#x2F;.bashrc 里面，然后执行一次 source ~&#x2F;.bashrc 使该文件生效即可。</p>
-<h1 id="update-alternatives"><a href="#update-alternatives" class="headerlink" title="update-alternatives"></a>update-alternatives</h1><p>1、注册软件<br>以jdk为例，安装了jdk以后，先要在update-alternatives⼯具中注册；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_91/bin/java 200</span><br><span class="line"></span><br><span class="line">update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_111/bin/java 300</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>其中:</p>
-<ol>
-<li>第⼀个参数–install表⽰向update-alternatives注册服务名。</li>
-<li>第⼆个参数是注册最终地址，成功后将会把命令在这个固定的⽬的地址做真实命令的软链，以后管理就是管理这个软链；</li>
-<li>第三个参数：服务名，以后管理时以它为关联依据。</li>
-<li>第四个参数，被管理的命令绝对路径。</li>
-<li>第五个参数，优先级，数字越⼤优先级越⾼。</li>
-</ol>
-<p>2、查看已注册列表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --display java</span><br><span class="line"></span><br><span class="line">java - status is auto.</span><br><span class="line"> link currently points to /opt/install/jdk1.8.0_111/bin/java</span><br><span class="line">/opt/install/jdk1.8.0_91/bin/java - priority 200</span><br><span class="line">/opt/install/jdk1.8.0_111/bin/java - priority 300</span><br><span class="line">Current `best&#x27; version is /opt/install/jdk1.8.0_111/bin/java.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="查看端口占用"><a href="#查看端口占用" class="headerlink" title="查看端口占用"></a>查看端口占用</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:8080：查看8080端口占用</span><br><span class="line">lsof abc.txt：显示开启文件abc.txt的进程</span><br><span class="line">lsof -c abc：显示abc进程现在打开的文件</span><br><span class="line">lsof -c -p 1234：列出进程号为1234的进程所打开的文件</span><br><span class="line">lsof -g gid：显示归属gid的进程情况</span><br><span class="line">lsof +d /usr/local/：显示目录下被进程开启的文件</span><br><span class="line">lsof +D /usr/local/：同上，但是会搜索目录下的目录，时间较长</span><br><span class="line">lsof -d 4：显示使用fd为4的进程</span><br><span class="line">lsof -i -U：显示所有打开的端口和UNIX domain文件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp | grep 端口号</span><br><span class="line">netstat -ntlp   //查看当前所有tcp端口</span><br><span class="line">netstat -ntulp | grep 80   //查看所有80端口使用情况</span><br><span class="line">netstat -ntulp | grep 3306   //查看所有3306端口使用情况</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </div>
 
 <!-- post-guide -->
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/MAKE/GCC%E5%8F%82%E6%95%B0/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  GCC参数
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2024/05/31/40%E5%B7%A5%E5%85%B7/GIT/git%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/">
-                git操作笔记
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
-    </div>
 
 
 <!-- comment - giscus -->
